@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [ "$1" == "" ]
 then
 	echo -e '\e[0;31m#___File Name is Empty___#\e[m'
