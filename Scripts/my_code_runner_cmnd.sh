@@ -48,9 +48,28 @@ then
 	if [ $? == 0 ]
 	then
 		time java $1
-		rm $1
+		rm *.class
 	fi
 	# done running java file
+elif [ -d $1 ]
+then
+	# doing for java package runn # no auto input
+	if [ -f $1/$2.java ]
+	then
+		javac $1/*.java
+		if [ $? == 0 ]
+		then
+			java $1/$2
+			rm $1/*.class
+			exit 0
+		else
+			echo 'Compilation falied'
+			exit 1
+		fi
+	else
+		echo 'file ' $1'/'$2'.java not found'
+		exit 1
+	fi
 else
 	echo -e '\e[0;31m#___Cant handle this FileType___#\e[m'
 	exit 1
