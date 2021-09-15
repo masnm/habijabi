@@ -9,7 +9,20 @@ fi
 if [ -f $1.c ]
 then
 	# this is an c file
-	echo 'c file'
+	if [ "$2" == "-f" ]
+	then
+		gcc -std=c11 -Wshadow -Wall -o $1.out $1.c -O2 -Wno-unused-result
+	else
+		gcc -std=c11 -Wshadow -Wall -o $1.out $1.c -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -DLOCAL
+	fi
+
+	if [ $? == 0 ]
+	then
+		time ./$1.out
+		rm $1.out
+	fi
+	# done running c file
+
 elif [ -f $1.cpp ]
 then
 	# this is an cpp file
@@ -37,7 +50,7 @@ then
 		time java $1
 		rm $1
 	fi
-	echo 'java file'
+	# done running java file
 else
 	echo -e '\e[0;31m#___Cant handle this FileType___#\e[m'
 	exit 1

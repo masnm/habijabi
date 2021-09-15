@@ -9,6 +9,7 @@ fi
 if [ -f $1.c ]
 then
 	# this is an c file
+	echo 'not implemented yet'
 elif [ -f $1.cpp ]
 then
 	# this is an cpp file
@@ -34,6 +35,7 @@ then
 elif [ -f $1.java ]
 then
 	# this is an java file
+	rm *.class
 else
 	# unknown
 fi
