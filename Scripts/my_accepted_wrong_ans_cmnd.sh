@@ -7,6 +7,7 @@ then
 fi
 
 # TODO : merge all the seperate implmentation together
+# TODO : cleanup not working properly
 
 if [ -f $1.c ]
 then
@@ -20,6 +21,7 @@ then
 		then
 			./$1.out < $1in$i > script_output
 			DIFF=$(diff -wB script_output $1out$i)
+			rm script_output
 			if [ "$DIFF" == "" ]
 			then
 				echo -e '\e[0;32m#________Accepted________#\e[m'
@@ -32,7 +34,6 @@ then
 				./$1.out < $1in$i
 				exit 1
 			fi
-			rm script_output
 		fi
 	done
 	rm $1.out
@@ -48,6 +49,7 @@ then
 		then
 			./$1.out < $1in$i > script_output
 			DIFF=$(diff -wB script_output $1out$i)
+			rm script_output
 			if [ "$DIFF" == "" ]
 			then
 				echo -e '\e[0;32m#________Accepted________#\e[m'
@@ -60,7 +62,6 @@ then
 				./$1.out < $1in$i
 				exit 1
 			fi
-			rm script_output
 		fi
 	done
 	rm $1.out
@@ -77,6 +78,7 @@ then
 		then
 			java $1 < $1in$i > script_output
 			DIFF=$(diff -wB script_output $1out$i)
+			rm script_output
 			if [ "$DIFF" == "" ]
 			then
 				echo -e '\e[0;32m#________Accepted________#\e[m'
@@ -89,7 +91,6 @@ then
 				java $1 < $1in$i
 				exit 1
 			fi
-			rm script_output
 		fi
 	done
 	rm *.class
