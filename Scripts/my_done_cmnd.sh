@@ -35,8 +35,23 @@ then
 elif [ -f $1.java ]
 then
 	# this is an java file
-	rm *.class
+	if [ -f $1.class ]
+	then
+		rm *.class
+	fi
+	for (( i = 1 ; i < 6 ; ++i ));
+	do
+		if [ -f $1in$i ]
+		then
+			rm $1in$i
+		fi
+		if [ -f $1out$i ]
+		then
+			rm $1out$i
+		fi
+	done
 else
+	echo -e '\e[0;31m#___Cant handle filetype___#\e[m'
 	# unknown
 fi
 

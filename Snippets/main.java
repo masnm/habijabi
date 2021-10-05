@@ -8,7 +8,8 @@ import java.util.StringTokenizer;
 public class  {
  
 	public static void main(String[] args) {
-		System.out.println ( "Hello Stupid!." );
+		FastScanner fs = new FastScanner ();
+		// System.out.println ( "Hello Stupid!." );
 	}
 
 	static void sort(int[] a) {

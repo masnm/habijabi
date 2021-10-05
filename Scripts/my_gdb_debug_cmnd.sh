@@ -27,10 +27,10 @@ then
 		exit 1
 	fi
 elif [ -f $1.java ]
+then
 	# TODO learn about gdb java
 	echo 'Not implemented yet'
-then
 else
-	echo -e '\e[0;31m#___Can't Handle this FileType___#\e[m'
+	echo -e '\e[0;31m#___Cant Handle this FileType___#\e[m'
 	exit 1
 fi
