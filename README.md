@@ -87,12 +87,22 @@ install vim-plug for vim
 install g++ and clang
 	$ sudo dnf install g++ clang
 
+vim clang c++ error
+	$ sudo dnf install clang-tools-extra
+	run in vim command mode
+	$ :CocInstall coc-clangd
+
 some packages for g++
 	$ sudo dnf install /usr/lib64/libasan.so.6
 	$ sudo dnf install /usr/lib64/libubsan.so.1
 
 install gnu debugger
 	$ sudo dnf install gdb
+
+install java-11 if needed
+	$ sudo dnf install java-11-openjdk-devel.x86_64
+	add vim plugin in coc-java run in vim command mode
+	$ :CocInstall coc-java
 
 packages for engine development
 	$ sudo dnf install libx11-dev libgl1-mesa-dev libglew-dev libpng-dev
