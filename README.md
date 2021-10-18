@@ -1,101 +1,72 @@
 # habijabi
 
-## Install the updates
+### Install the updates
 ```console
 $ sudo apt update && sudo apt upgrade
 ```
 
-## Restoring ssh and gpg key
+### Restoring ssh and gpg key
 
-	Backup:
-		```console
-		cp -r ~/.ssh /media/masnm/{drive name}
-		gpg --export-secret-keys $ID > my-private-key.asc
-		cp ./my-private-key.asc /media/masnm/{drive name}
-		rm my-private-key.asc
-		```
-
-	Restore:
-		```console
-		cp -r /media/masnm/{drive name} ~/.ssh
-		chown masnm:masnm ~/.ssh/id_ed*
-		chmod 600 ~/.ssh/id_ed25519
-		chmod 644 ~/.ssh/id_ed25519.pub
-		exec ssh-agent bash
-		ssh-add ~/.ssh/id_rsa
-		cp /media/masnm/{drive name} ./my-private-key.asc
-		gpg --import my-private-key.asc
-		```
-
-
-## Install some nacessary apps / packages
+##### Backup: Change {drive name}
 ```console
-$ sudo apt install git vim xclip uget
+cp -r ~/.ssh /media/masnm/{drive name}
+gpg --export-secret-keys $ID > my-private-key.asc
+cp ./my-private-key.asc /media/masnm/{drive name}
+rm my-private-key.asc
 ```
 
-## Install Materia theme and icon
+##### Restore: Change {drive name}, {user name}
 ```console
-$ sudo dnf install materia-gtk-theme papirus-icon-theme dmz-cursor-theme
+cp -r /media/masnm/{drive name} ~/.ssh
+chown {user name}:{user name} ~/.ssh/id_ed*
+chmod 600 ~/.ssh/id_ed25519
+chmod 644 ~/.ssh/id_ed25519.pub
+exec ssh-agent bash
+ssh-add ~/.ssh/id_rsa
+cp /media/masnm/{drive name} ./my-private-key.asc
+gpg --import my-private-key.asc
 ```
 
-copy .vimrc from habijabi to home .vimrc
+### Install some nacessary apps / packages
+```console
+$ sudo apt install git vim g++ xclip uget gdb
+```
+
+### Install Materia theme and icon
+```console
+$ sudo apt install materia-gtk-theme papirus-icon-theme dmz-cursor-theme
+```
+
+### Some extra packages for g++
+```console
+	$ sudo apt install /usr/lib64/libasan.so.6
+	$ sudo apt install /usr/lib64/libubsan.so.1
+```
+
+### Restore all the dotfiles
+```console
 	$ cp ~/habijabi/.vimrc ~/.vimrc
+```
 
-copy .gitconfig form habijabi to home
-	$ cp ~/habijabi/.gitconfig ~/.gitconfig
+### Install java-11 if needed
+```console
+	$ sudo apt install java-11-openjdk-devel.x86_64
+```
 
-install nodejs an configure global module
-	$ sudo dnf install nodejs
-	$ mkdir ~/.npm-global
-	$ npm config set prefix '~/.npm-global'
-	$ export PATH=~/.npm-global/bin:$PATH
-	$ source ~/.profile
+### Install Prolog if needed
+```console
+    $ sudo apt install pl
+```
 
-install vim-plug for vim
-	$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	
-	run :PlugInstall in vim command mode
-
-install g++ and clang
-	$ sudo dnf install g++ clang
-
-vim clang c++ error
-	$ sudo dnf install clang-tools-extra
-	run in vim command mode
-	$ :CocInstall coc-clangd
-
-some packages for g++
-	$ sudo dnf install /usr/lib64/libasan.so.6
-	$ sudo dnf install /usr/lib64/libubsan.so.1
-
-install gnu debugger
-	$ sudo dnf install gdb
-
-install java-11 if needed
-	$ sudo dnf install java-11-openjdk-devel.x86_64
-	add vim plugin in coc-java run in vim command mode
-	$ :CocInstall coc-java
-
-packages for engine development
+### Packages for engine development
+```console
 	$ sudo dnf install libx11-dev libgl1-mesa-dev libglew-dev libpng-dev
+```
 
-modding the bash prompt
-	edit with sudo previllige
-		$ sudo vim /etc/bashrc 
-	comment this line
-		[ "$PS1" = "\\s-\\v\\\$ " ] && PS1="[\u@\h \W]\\$ "
-	after previous line add this 4 lines
-		if [ $EUID == 0 ]; then
-		  [ "$PS1" = "\\s-\\v\\\$ " ] && PS1="\[\033[01;31m\]\u@\h\[\033[01;34m\] \W \$\[\033[00m\] "
-		 else
-		  [ "$PS1" = "\\s-\\v\\\$ " ] && PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] "
-		fi
-
-android phone auto mounter if already not working
-	$ sudo dnf install gvfs-mtp
-
-
+### Android phone auto mounter if already not working
+```console
+	$ sudo apt install gvfs-mtp
+```
 
 ## Firefox setup...
 
