@@ -2,11 +2,10 @@
 
 Install Fedora i3 spin
 
-install the updates
-	$ sudo dnf update
-	
-	if update falied add user to wheel group 
-	$ sudo usermod -aG wheel USERNAME
+## install the updates
+```console
+	$ sudo apt update && sudo apt upgrade
+```
 
 install a pdf viewer
 	$ sudo dnf install evince
