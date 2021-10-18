@@ -35,7 +35,7 @@ $ sudo apt install git vim xclip uget
 
 ## Install Materia theme and icon
 ```console
-$ sudo dnf install materia-gtk-theme papirus-icon-theme
+$ sudo dnf install materia-gtk-theme papirus-icon-theme dmz-cursor-theme
 ```
 
 copy .vimrc from habijabi to home .vimrc
