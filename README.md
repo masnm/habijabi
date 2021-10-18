@@ -1,27 +1,9 @@
 # habijabi
 
-Install Fedora i3 spin
-
 ## install the updates
 ```console
-	$ sudo apt update && sudo apt upgrade
+$ sudo apt update && sudo apt upgrade
 ```
-
-install a pdf viewer
-	$ sudo dnf install evince
-
-install a screenshoot package
-	$ sudo dnf install maim
-
-install feh if not installed alredy
-	$ sudo dnf install feh
-
-install git if not installed
-	$ sudo dnf install git
-
-install the Iosevka font
-	$ sudo dnf copr enable peterwu/iosevka
-	$ sudo dnf install iosevka-fonts iosevka-term-fonts iosevka-fixed-fonts
 
 restoring ssh and gpg key
 	Backup:
@@ -51,15 +33,10 @@ restoring ssh and gpg key
 	Now you’re ready to use Git and update your repositories.
 
 
-clone the habijabi project from github
-	$ git clone 
-
-copy .Xdefaults from the habijai folder to home directory
-	$ cp ~/habijabi/.Xdefaults ~/.Xdefaults
-
-copy the i3 config and i3status config from habijabi to .config file
-	$ cp ~/habijabi/i3/config ~/.config/i3/config
-	$ cp ~/habijabi/i3status/config ~/.config/i3status/i3status.conf
+install git if not installed
+```console
+$ sudo apt install git
+```
 
 copy .vimrc from habijabi to home .vimrc
 	$ cp ~/habijabi/.vimrc ~/.vimrc
