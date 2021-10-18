@@ -1,40 +1,41 @@
 # habijabi
 
 ### Install the updates
+Change the update preferences in Software
 ```console
-$ sudo apt update && sudo apt upgrade
+	$ sudo apt update && sudo apt upgrade
 ```
 
 ### Restoring ssh and gpg key
 
 ##### Backup: Change {drive name}
 ```console
-cp -r ~/.ssh /media/masnm/{drive name}
-gpg --export-secret-keys $ID > my-private-key.asc
-cp ./my-private-key.asc /media/masnm/{drive name}
-rm my-private-key.asc
+	cp -r ~/.ssh /media/masnm/{drive name}
+	gpg --export-secret-keys $ID > my-private-key.asc
+	cp ./my-private-key.asc /media/masnm/{drive name}
+	rm my-private-key.asc
 ```
 
 ##### Restore: Change {drive name}, {user name}
 ```console
-cp -r /media/masnm/{drive name} ~/.ssh
-chown {user name}:{user name} ~/.ssh/id_ed*
-chmod 600 ~/.ssh/id_ed25519
-chmod 644 ~/.ssh/id_ed25519.pub
-exec ssh-agent bash
-ssh-add ~/.ssh/id_rsa
-cp /media/masnm/{drive name} ./my-private-key.asc
-gpg --import my-private-key.asc
+	cp -r /media/masnm/{drive name} ~/.ssh
+	chown {user name}:{user name} ~/.ssh/id_ed*
+	chmod 600 ~/.ssh/id_ed25519
+	chmod 644 ~/.ssh/id_ed25519.pub
+	exec ssh-agent bash
+	ssh-add ~/.ssh/id_rsa
+	cp /media/masnm/{drive name} ./my-private-key.asc
+	gpg --import my-private-key.asc
 ```
 
 ### Install some nacessary apps / packages
 ```console
-$ sudo apt install git vim g++ xclip uget gdb
+	$ sudo apt install git vim g++ xclip uget gdb
 ```
 
 ### Install Materia theme and icon
 ```console
-$ sudo apt install materia-gtk-theme papirus-icon-theme dmz-cursor-theme
+	$ sudo apt install materia-gtk-theme papirus-icon-theme dmz-cursor-theme
 ```
 
 ### Some extra packages for g++
@@ -50,12 +51,12 @@ $ sudo apt install materia-gtk-theme papirus-icon-theme dmz-cursor-theme
 
 ### Install java-11 if needed
 ```console
-	$ sudo apt install java-11-openjdk-devel.x86_64
+	$ sudo apt install openjdk-11-jdk
 ```
 
 ### Install Prolog if needed
 ```console
-    $ sudo apt install pl
+	$ sudo apt install swi-prolog
 ```
 
 ### Packages for engine development
