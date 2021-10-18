@@ -1,41 +1,41 @@
 # habijabi
 
-## install the updates
+## Install the updates
 ```console
 $ sudo apt update && sudo apt upgrade
 ```
 
-restoring ssh and gpg key
+## Restoring ssh and gpg key
+
 	Backup:
-		1. Copy both id_rsa and id_rsa.pub from ~/.ssh/ to a USB drive.
-		2. Identify the private key by executing the following command.
-		3. $ gpg --list-secret-keys --keyid-format LONG
-		4. It will show something similar to this.
-		5. sec   4096R/3AA5C34371567BD2 2016-03-10 [expires: 2017-03-10]
-		6. Characters after the slash are the ID of the private key.
-		7. Export the private key.
-		8. gpg --export-secret-keys $ID > my-private-key.asc
-		9. Copy my-private-key.asc to a USB drive.
+		```console
+		cp -r ~/.ssh /media/masnm/{drive name}
+		gpg --export-secret-keys $ID > my-private-key.asc
+		cp ./my-private-key.asc /media/masnm/{drive name}
+		rm my-private-key.asc
+		```
 
 	Restore:
-		1. Copy both id_rsa and id_rsa.pub to ~/.ssh/
-		2. Change file permissions and ownership of both files.
-		3. $ chown user:user ~/.ssh/id_rsa*
-		4. $ chmod 600 ~/.ssh/id_rsa
-		5. $ chmod 644 ~/.ssh/id_rsa.pub
-		6. Start the ssh-agent.
-		7. $ exec ssh-agent bash
-		8. Add your SSH private key to the ssh-agent.
-		9. $ ssh-add ~/.ssh/id_rsa
-		10. Import your GPG key
-		11. $ gpg --import my-private-key.asc
-		
-	Now you’re ready to use Git and update your repositories.
+		```console
+		cp -r /media/masnm/{drive name} ~/.ssh
+		chown masnm:masnm ~/.ssh/id_ed*
+		chmod 600 ~/.ssh/id_ed25519
+		chmod 644 ~/.ssh/id_ed25519.pub
+		exec ssh-agent bash
+		ssh-add ~/.ssh/id_rsa
+		cp /media/masnm/{drive name} ./my-private-key.asc
+		gpg --import my-private-key.asc
+		```
 
 
-install git if not installed
+## Install some nacessary apps / packages
 ```console
-$ sudo apt install git
+$ sudo apt install git vim xclip uget
+```
+
+## Install Materia theme and icon
+```console
+$ sudo dnf install materia-gtk-theme papirus-icon-theme
 ```
 
 copy .vimrc from habijabi to home .vimrc
@@ -50,9 +50,6 @@ install nodejs an configure global module
 	$ npm config set prefix '~/.npm-global'
 	$ export PATH=~/.npm-global/bin:$PATH
 	$ source ~/.profile
-
-install vim
-	$ sudo dnf install vim
 
 install vim-plug for vim
 	$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -83,9 +80,6 @@ install java-11 if needed
 packages for engine development
 	$ sudo dnf install libx11-dev libgl1-mesa-dev libglew-dev libpng-dev
 
-install keyboard manager
-	$ sudo dnf install xclip
-
 modding the bash prompt
 	edit with sudo previllige
 		$ sudo vim /etc/bashrc 
@@ -98,22 +92,13 @@ modding the bash prompt
 		  [ "$PS1" = "\\s-\\v\\\$ " ] && PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] "
 		fi
 
-installing some theme
-	$ sudo dnf install materia-gtk-theme papirus-icon-theme
-
-themming app lx apperance
-	$ sudo dnf install lxappearance
-
-android phone auto mounter
+android phone auto mounter if already not working
 	$ sudo dnf install gvfs-mtp
 
-install a download manager uget
-	$ sudo dnf install uget
 
 
+## Firefox setup...
 
-
-*Firefox setup...
 	add ons :
 		1. AdBlocker for YouTube
 		2. Privacy Badger
@@ -158,7 +143,7 @@ install a download manager uget
 
 
 
-***->->->6. Sound solution<-<-<-***
+## ***->->->6. Sound solution<-<-<-***
 I found a solution for this issue: There is an option in the hda driver to disable the Jack detection. I made a udev rule to enforce this before boot:
 
 	/etc/udev/rules.d/jackdetect.rules
