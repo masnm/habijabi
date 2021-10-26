@@ -3,7 +3,7 @@
 ### Install the updates
 Change the update preferences in Software
 ```console
-	$ sudo apt update && sudo apt upgrade
+	$ sudo apt-get update && sudo apt update && sudo apt upgrade
 ```
 
 ### Restoring ssh and gpg key
