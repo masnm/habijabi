@@ -30,7 +30,7 @@ Change the update preferences in Software
 
 ### Install some nacessary apps / packages
 ```console
-	$ sudo apt install git vim g++ xclip uget gdb
+	$ sudo apt install git vim g++ xclip uget gdb python
 ```
 
 ### Install Materia theme and icon

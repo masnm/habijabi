@@ -8,6 +8,7 @@ sudo cp my_accepted_wrong_ans_cmnd.sh /bin/my_accepted_wrong_ans_cmnd.sh
 sudo cp my_code_compile_cmnd.sh /bin/my_code_compile_cmnd.sh
 sudo cp my_code_runner_cmnd.sh /bin/my_code_runner_cmnd.sh
 sudo cp my_project_create_cmnd.sh /bin/my_project_create_cmnd.sh
+sudo cp my_getter_setter_cmnd.sh /bin/my_getter_setter_cmnd.sh
 
 echo -e '\e[0;33m#___ Dont forgate to make aliases___#\e[m'
 echo 'alias dn="my_done_cmnd.sh"'
@@ -18,3 +19,4 @@ echo 'alias v="my_accepted_wrong_ans_cmnd.sh"'
 echo 'alias c="my_code_compile_cmnd.sh"'
 echo 'alias r="my_code_runner_cmnd.sh"'
 echo 'alias project="my_project_create_cmnd.sh"'
+echo 'alias jgs="my_getter_setter_cmnd.sh"'
