@@ -5,12 +5,14 @@
 	$ sudo vim /etc/X11/xorg.conf.d/20-intel.conf
 ```
 and put this lines there
-	Section "Device"
-	  Identifier "Intel Graphics"
-	  Driver "intel"
-	  Option "TripleBuffer" "true"
-	  Option "TearFree" "true"
-	EndSection
+```
+Section "Device"
+  Identifier "Intel Graphics"
+  Driver "intel"
+  Option "TripleBuffer" "true"
+  Option "TearFree" "true"
+EndSection
+```
 
 ### Install the updates
 Change the update preferences in Software
