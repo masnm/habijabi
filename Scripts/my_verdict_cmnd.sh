@@ -19,7 +19,7 @@ then
 		do
 			if [ -f $1in$i ]
 			then
-				echo 'Output '$i
+				echo -e '\e[0;33m Output '$i'\e[m'
 				./$1.out < $1in$i
 			fi
 		done
@@ -43,7 +43,7 @@ then
 		do
 			if [ -f $1in$i ]
 			then
-				echo 'Output '$i
+				echo -e '\e[0;33m Output '$i'\e[m'
 				./$1.out < $1in$i
 			fi
 		done
@@ -67,7 +67,7 @@ then
 		do
 			if [ -f $1in$i ]
 			then
-				echo 'Output '$i
+				echo -e '\e[0;33m Output '$i'\e[m'
 				java $1 < $1in$i
 			fi
 		done
