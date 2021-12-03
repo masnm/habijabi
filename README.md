@@ -78,6 +78,12 @@ Change the update preferences in Software
 	$ sudo dnf install libx11-dev libgl1-mesa-dev libglew-dev libpng-dev
 ```
 
+### Install the ppa adder
+```console
+	$ sudo apt-get install software-properties-common
+	$ sudo apt-get update
+```
+
 ### Android phone auto mounter if already not working
 ```console
 	$ sudo add-apt-repository ppa:langdalepl/gvfs-mtp
