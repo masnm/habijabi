@@ -80,6 +80,9 @@ Change the update preferences in Software
 
 ### Android phone auto mounter if already not working
 ```console
+	$ sudo add-apt-repository ppa:langdalepl/gvfs-mtp
+	$ sudo apt-get update
+	$ sudo apt-get install gvfs
 	$ sudo apt install gvfs-mtp
 ```
 
