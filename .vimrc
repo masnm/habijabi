@@ -59,10 +59,10 @@ nnoremap ,rs ?using<CR>j:-1read $HOME/codes/habijabi/Snippets/read_string.cpp<CR
 set listchars=tab:·\ ,
 set list
 
-call plug#begin()
-	Plug 'bluz71/vim-nightfly-guicolors'
-	Plug 'octol/vim-cpp-enhanced-highlight'
-call plug#end()
+" call plug#begin()
+" 	Plug 'bluz71/vim-nightfly-guicolors'
+" 	Plug 'octol/vim-cpp-enhanced-highlight'
+" call plug#end()
 
 " Vimscript initialization file
 " colorscheme nightfly

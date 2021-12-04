@@ -1,50 +1,56 @@
 # habijabi
 
-### Fix Screen tearing in i3-wm
+### Comment the cdrm line in source repos
+```conlose
+	sudo vi /etc/apt/sources.list
+```
+
+### Install the WM and necessary packages
+```conlose
+	sudo apt install i3 xorg lightdm slick-greeter lightdm-settings lxappearance nitrogen thunar firefox-esr pulseaudio alsa-utils pavucontrol terminator
+```
+
+### Enable the lightdm greeter
+```conlose
+	sudo systemctl enable lightdm
+```
+
+### Install a Compositro
 ```console
-	$ sudo vim /etc/X11/xorg.conf.d/20-intel.conf
-```
-and put this lines there
-```
-Section "Device"
-  Identifier "Intel Graphics"
-  Driver "intel"
-  Option "TripleBuffer" "true"
-  Option "TearFree" "true"
-EndSection
+	sudo apt install compton
 ```
 
 ### Install the updates
 Change the update preferences in Software
 ```console
-	$ sudo apt-get update && sudo apt update && sudo apt upgrade
+	sudo apt-get update && sudo apt update && sudo apt upgrade
 ```
 
 ### Restoring ssh and gpg key
 
-##### Backup: Change {drive name}
-```console
-	cp -r ~/.ssh /media/masnm/{drive name}
-	gpg --export-secret-keys $ID > my-private-key.asc
-	cp ./my-private-key.asc /media/masnm/{drive name}
-	rm my-private-key.asc
-```
-
-##### Restore: Change {drive name}, {user name}
-```console
-	cp -r /media/masnm/{drive name} ~/.ssh
-	chown {user name}:{user name} ~/.ssh/id_ed*
-	chmod 600 ~/.ssh/id_ed25519
-	chmod 644 ~/.ssh/id_ed25519.pub
-	exec ssh-agent bash
-	ssh-add ~/.ssh/id_rsa
-	cp /media/masnm/{drive name} ./my-private-key.asc
-	gpg --import my-private-key.asc
-```
+	##### Backup: Change {drive name}
+	```console
+		cp -r ~/.ssh /media/masnm/{drive name}
+		gpg --export-secret-keys $ID > my-private-key.asc
+		cp ./my-private-key.asc /media/masnm/{drive name}
+		rm my-private-key.asc
+	```
+	
+	##### Restore: Change {drive name}, {user name}
+	```console
+		cp -r /media/masnm/{drive name} ~/.ssh
+		chown {user name}:{user name} ~/.ssh/id_ed*
+		chmod 600 ~/.ssh/id_ed25519
+		chmod 644 ~/.ssh/id_ed25519.pub
+		eval "$(ssh-agent -s)"
+		ssh-add ~/.ssh/id_ed25519
+		cp /media/masnm/{drive name} ./my-private-key.asc
+		gpg --import my-private-key.asc
+	```
 
 ### Install some nacessary apps / packages
 ```console
-	$ sudo apt install git vim g++ xclip uget gdb python
+	sudo apt install git vim g++ xclip uget gdb
 ```
 
 ### Install Materia theme and icon
@@ -52,36 +58,25 @@ Change the update preferences in Software
 	$ sudo apt install materia-gtk-theme papirus-icon-theme dmz-cursor-theme
 ```
 
-### Some extra packages for g++
-```console
-	$ sudo apt install /usr/lib64/libasan.so.6
-	$ sudo apt install /usr/lib64/libubsan.so.1
-```
-
-### Restore all the dotfiles
-```console
-	$ cp ~/habijabi/.vimrc ~/.vimrc
-```
-
 ### Install java-11 if needed
 ```console
-	$ sudo apt install openjdk-11-jdk
+	sudo apt install openjdk-11-jdk
 ```
 
 ### Install Prolog if needed
 ```console
-	$ sudo apt install swi-prolog
+	sudo apt install swi-prolog
 ```
 
 ### Packages for engine development
 ```console
-	$ sudo dnf install libx11-dev libgl1-mesa-dev libglew-dev libpng-dev
+	sudo dnf install libx11-dev libgl1-mesa-dev libglew-dev libpng-dev
 ```
 
 ### Install the ppa adder
 ```console
-	$ sudo apt-get install software-properties-common
-	$ sudo apt-get update
+	sudo apt-get install software-properties-common
+	sudo apt-get update
 ```
 
 ### Android phone auto mounter if already not working
