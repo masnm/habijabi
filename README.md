@@ -1,17 +1,17 @@
 # habijabi
 
 ### Comment the cdrm line in source repos
-```conlose
+```console
 	sudo vi /etc/apt/sources.list
 ```
 
 ### Install the WM and necessary packages
-```conlose
+```console
 	sudo apt install i3 xorg lightdm slick-greeter lightdm-settings lxappearance nitrogen thunar firefox-esr pulseaudio alsa-utils pavucontrol terminator
 ```
 
 ### Enable the lightdm greeter
-```conlose
+```console
 	sudo systemctl enable lightdm
 ```
 
