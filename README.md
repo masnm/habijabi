@@ -20,6 +20,11 @@
 	sudo apt install compton
 ```
 
+### Install a Fancy Locking package
+```console
+	sudo apt install i3lock-fancy
+```
+
 ### Install the updates
 Change the update preferences in Software
 ```console
