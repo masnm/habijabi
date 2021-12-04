@@ -186,7 +186,7 @@ bar {
 exec nitrogen --restore
 
 # Lock Screen
-bindsym $mod+x exec i3lock -c 000000
+bindsym $mod+x exec i3lock-fancy
 
 # Compton for Fixing screen tearing
 exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc --no-fading-openclose
