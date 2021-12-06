@@ -2,105 +2,67 @@
 
 ### Comment the cdrm line in source repos
 ```console
-	sudo vi /etc/apt/sources.list
+sudo vi /etc/apt/sources.list
 ```
 
 ### Install the WM and necessary packages
 ```console
-	sudo apt install i3 xorg lightdm slick-greeter lightdm-settings lxappearance nitrogen thunar firefox-esr pulseaudio alsa-utils pavucontrol terminator
+sudo apt install i3 xorg lightdm slick-greeter lightdm-settings lxappearance nitrogen thunar firefox-esr pulseaudio alsa-utils pavucontrol terminator compton i3lock-fancy
 ```
 
 ### Enable the lightdm greeter
 ```console
-	sudo systemctl enable lightdm
-```
-
-### Install a Compositro
-```console
-	sudo apt install compton
-```
-
-### Install a Fancy Locking package
-```console
-	sudo apt install i3lock-fancy
+sudo systemctl enable lightdm
 ```
 
 ### Install the updates
 Change the update preferences in Software
 ```console
-	sudo apt-get update && sudo apt update && sudo apt upgrade
+sudo apt-get update && sudo apt update && sudo apt upgrade
 ```
 
 ### Restoring ssh and gpg key
 
-	##### Backup: Change {drive name}
-	```console
-		cp -r ~/.ssh /media/masnm/{drive name}
-		gpg --export-secret-keys $ID > my-private-key.asc
-		cp ./my-private-key.asc /media/masnm/{drive name}
-		rm my-private-key.asc
-	```
+##### Backup: Change {drive name}
+	cp -r ~/.ssh /media/masnm/{drive name}
+	gpg --export-secret-keys $ID > my-private-key.asc
+	cp ./my-private-key.asc /media/masnm/{drive name}
+	rm my-private-key.asc
 	
-	##### Restore: Change {drive name}, {user name}
-	```console
-		cp -r /media/masnm/{drive name} ~/.ssh
-		chown {user name}:{user name} ~/.ssh/id_ed*
-		chmod 600 ~/.ssh/id_ed25519
-		chmod 644 ~/.ssh/id_ed25519.pub
-		eval "$(ssh-agent -s)"
-		ssh-add ~/.ssh/id_ed25519
-		cp /media/masnm/{drive name} ./my-private-key.asc
-		gpg --import my-private-key.asc
-	```
+##### Restore: Change {drive name}, {user name}
+	cp -r /media/masnm/{drive name} ~/.ssh
+	chown {user name}:{user name} ~/.ssh/id_ed*
+	chmod 600 ~/.ssh/id_ed25519
+	chmod 644 ~/.ssh/id_ed25519.pub
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_ed25519
+	cp /media/masnm/{drive name} ./my-private-key.asc
+	gpg --import my-private-key.asc
 
 ### Install some nacessary apps / packages
 ```console
-	sudo apt install git vim g++ xclip uget gdb
+sudo apt install git vim gcc g++ xclip uget gdb
 ```
 
 ### Install Materia theme and icon
 ```console
-	$ sudo apt install materia-gtk-theme papirus-icon-theme dmz-cursor-theme
-```
-
-### Install java-11 if needed
-```console
-	sudo apt install openjdk-11-jdk
-```
-
-### Install Prolog if needed
-```console
-	sudo apt install swi-prolog
+sudo apt install materia-gtk-theme papirus-icon-theme
 ```
 
 ### Packages for engine development
 ```console
-	sudo dnf install libx11-dev libgl1-mesa-dev libglew-dev libpng-dev
-```
-
-### Install the ppa adder
-```console
-	sudo apt-get install software-properties-common
-	sudo apt-get update
+sudo dnf install libx11-dev libgl1-mesa-dev libglew-dev libpng-dev
 ```
 
 ### Android phone auto mounter if already not working
 ```console
-	$ sudo add-apt-repository ppa:langdalepl/gvfs-mtp
-	$ sudo apt-get update
-	$ sudo apt-get install gvfs
-	$ sudo apt install gvfs-mtp
+sudo apt install gvfs-backends  # `gvfs-mtp` for fedora
 ```
 
 ## Firefox setup...
 
-	add ons :
-		1. AdBlocker for YouTube
-		2. Privacy Badger
-		3. HTTPS Everywhere
 	Preference: General
-		1. Make it default
-		2. Network settings -> Enable DNS over HTTPS
+		Network settings -> Enable DNS over HTTPS
 	Preference: Home
 		1. untick
 			a. top sites
@@ -138,7 +100,7 @@ Change the update preferences in Software
 
 
 
-## ***->->->6. Sound solution<-<-<-***
+## ***->->-> Sound solution <-<-<-***
 I found a solution for this issue: There is an option in the hda driver to disable the Jack detection. I made a udev rule to enforce this before boot:
 
 	/etc/udev/rules.d/jackdetect.rules
