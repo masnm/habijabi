@@ -1,5 +1,3 @@
-
-
 !! Colorscheme
 
 ! special
@@ -41,11 +39,35 @@
 *.color15: #fdf6e3
 
 !setting up font
-URxvt.font: 		xft:monospace:size=14
+URxvt.font: 		xft:monospace:size=10
 URxvt.scrollBar: 	false
 
-! Extensions
-URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
+! Perl Extensions
+URxvt.perl-lib: /usr/lib/urxvt/perl/
+URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select,clipboard
 
-URxvt.resize-font.smaller:	C-+
-URxvt.resize-font.bigger:	C--
+! Keyboard Select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keyboard-select.clipboard: true
+
+! URL select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.autocopy: true
+URxvt.url-select.button: 0
+# URxvt.url-select.launcher:  browser/command to open selected URL with
+URxvt.url-select.underline: true
+
+# Clipboard options
+URxvt.keysym.C-c:   perl:clipboard:copy
+URxvt.keysym.C-v:   perl:clipboard:paste
+# URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.clipboard.autocopy: true
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+
+
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
+URxvt.resize-font.step: 2

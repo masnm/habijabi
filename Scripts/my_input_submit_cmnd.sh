@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$1" == "" ]; then
-	echo -e '\e[0;31m#___File Name is Empty___#\e[m'
+	echo -e '\e[0;31m#___Argument List is Empty___#\e[m'
 	exit 1
 fi
 
@@ -13,6 +13,13 @@ do
 		exit 0
 	fi
 done
+
+# Cheak if it is a direct file to submit or paste
+if ( ([[ "$1" == *.c ]]) || ([[ "$1" == *.cpp ]]) || ([[ "$1" == *.java ]]) ); then
+	xclip -selection clipboard < $1
+	echo -e '\e[0;32m#___File Copied Successfully___#\e[m'
+	exit 0
+fi
 
 # copying file to clipboard for paste or share
 if [ "$1" != "" ] && [ "$2" == "" ]; then
