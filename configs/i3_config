@@ -185,8 +185,14 @@ bar {
 # Wallpaper selector
 exec nitrogen --restore
 
+# Screenshot example
+bindsym Shift+Print exec maim -s | xclip -selection clipboard -t image/png
+
 # Lock Screen
 bindsym $mod+x exec i3lock-fancy
 
 # Compton for Fixing screen tearing
 exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc --no-fading-openclose
+
+# Make Pavucontrol Floating
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable

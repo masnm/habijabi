@@ -12,15 +12,21 @@ set foldlevel=1
 
 " enable line number and indentation
 set number
+set relativenumber
 filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
 
 " enable syntax and plugin (for netrw)
 syntax enable
 filetype plugin on
 
+" enable dictionary
+set dictionary+=/usr/share/dict/american-english
+
 " search down into subfolders
 " Provides tab-completaion for all file-related tasks
-" set path+=**
+set path+=**
 autocmd FileType cpp set path+=/usr/include/c++/11/
 
 " Display all matching files when we tab complete
@@ -43,29 +49,49 @@ let g:netrw_list_hide.=',\(^\|\s\s)\zs\.\s\+'
 nnoremap ,cc :-1read $HOME/codes/habijabi/Snippets/main.c<CR>4ggo<CR>
 nnoremap ,cpp :-1read $HOME/codes/habijabi/Snippets/main.cpp<CR>38ggzt
 nnoremap ,java :-1read $HOME/codes/habijabi/Snippets/main.java<CR>8ggf{hi
+nnoremap ,rs mmG?using<CR>j:-1read $HOME/codes/habijabi/Snippets/read_string.cpp<CR>2jf[a
 
 " scan test cases
-nnoremap ,ntc G9ki//<ESC>?solve<CR>
-nnoremap ,ytc G9kvld<ESC>?solve<CR>
+nnoremap ,ntc mmG9ki//<ESC>`m
+nnoremap ,ytc mmG9kvld<ESC>`m
 
 " print case number
-nnoremap ,ncn G7ki//<ESC>?solve<CR>
-nnoremap ,ycn G7kvld<ESC>?solve<CR>
-
-" read string function
-nnoremap ,rs ?using<CR>j:-1read $HOME/codes/habijabi/Snippets/read_string.cpp<CR>2jf[a
+nnoremap ,ncn mmG7ki//<ESC>`m
+nnoremap ,ycn mmG7kvld<ESC>`m
 
 " making tab visible
 set listchars=tab:·\ ,
 set list
 
-" call plug#begin()
-" 	Plug 'bluz71/vim-nightfly-guicolors'
-" 	Plug 'octol/vim-cpp-enhanced-highlight'
-" call plug#end()
+call plug#begin()
+	Plug 'octol/vim-cpp-enhanced-highlight'
+call plug#end()
 
-" Vimscript initialization file
-" colorscheme nightfly
-" set termguicolors
 set notermguicolors
-colorscheme elflord
+" colorscheme elflord
+colorscheme xoria256
+
+" setting the 'makeprg' variable
+set makeprg=my_code_compile_cmnd.sh\ %
+
+" Test command inside vim
+command! Test !my_verdict_cmnd.sh %
+
+" Run command inside vim
+command! Run !my_code_runner_cmnd.sh %
+
+" Cheak time and memory usage
+command! TM !my_time_memory_usage_cmnd.sh %
+
+" Copy file to clipboard for submitting
+command! Sub !my_input_submit_cmnd.sh %
+
+" remapping arrow keys
+noremap <Up>    <Nop>
+noremap <Down>  <Nop>
+noremap <Left>  <Nop>
+noremap <Right> <Nop>
+
+" enabling maximum columnwidth and enabling error
+set colorcolumn=80
+match ErrorMsg '\%>80v.\+'

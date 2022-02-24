@@ -1,46 +1,107 @@
-!! Colorscheme
+! ! Dracula Xresources palette
+! *.foreground: #F8F8F2
+! *.background: #282A36
+! *.color0:     #000000
+! *.color8:     #4D4D4D
+! *.color1:     #FF5555
+! *.color9:     #FF6E67
+! *.color2:     #50FA7B
+! *.color10:    #5AF78E
+! *.color3:     #F1FA8C
+! *.color11:    #F4F99D
+! *.color4:     #BD93F9
+! *.color12:    #CAA9FA
+! *.color5:     #FF79C6
+! *.color13:    #FF92D0
+! *.color6:     #8BE9FD
+! *.color14:    #9AEDFE
+! *.color7:     #BFBFBF
+! *.color15:    #E6E6E6
 
-! special
-*.foreground: #93a1a1
-*.foreground_bold: #93a1a1
-*.background: #141c21
-*.cursorColor: #afbfbf
+! ! Normal      Bright          VIM                  Bash Prompt
+! ! --------    -------       -------               --------------
+! ! 0 Black      8 Black      0                     8
+! ! 1 Red        9 Red        1 Inside "" <>        9
+! ! 2 Yellow    10 Yellow     2 int/namespace       10 Bash Prompt
+! ! 3 Green     11 Green      3                     11
+! ! 4 Blue      12 Blue       4                     12
+! ! 5 Magenta   13 Magenta    5 # defines           13
+! ! 6 Cyan      14 Cyan       6 Function Name       14
+! ! 7 White     15 White      7                     15 
 
-! black
-*.color0: #263640
-*.color8: #4a697d
+! URxvt*background: #ffffff
+! URxvt*foreground: #000000
+! 
+! URxvt*color0: #000000
+! URxvt*color8: #000000
+! URxvt*color1: #941cdc
+! URxvt*color9: #349334
+! URxvt*color2: #264653
+! URxvt*color10: #264653
+! URxvt*color3: #7f7f7f
+! URxvt*color11: #7f7f7f
+! URxvt*color4: #2a9d8f
+! URxvt*color12: #2a9d8f
+! URxvt*color5: #048c8c
+! URxvt*color13: #048c8c
+! URxvt*color6: #b83434
+! URxvt*color14: #b83434
+! URxvt*color7: #1b1bfc
+! URxvt*color15: #1b1bfc
 
-! red
-*.color1: #d12f2c
-*.color9: #fa3935
+! -----------------------------------------------------------------------------
+! File: gruvbox-dark.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
 
-! green
-*.color2: #819400
-*.color10: #a4bd00
+! hard contrast: *background: #1d2021
+! URxvt*background: #242424
+URxvt*background: #1c1c1c
+! soft contrast: *background: #32302f
+URxvt*foreground: #eeeeee
+! URxvt*cursorColor: #afbfbf
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
 
-! yellow
-*.color3: #b08500
-*.color11: #d9a400
+!1- !!Source http://github.com/altercation/solarized
 
-! blue
-*.color4: #2587cc
-*.color12: #2ca2f5
-
-! magenta
-*.color5: #696ebf
-*.color13: #8086e8
-
-! cyan
-*.color6: #289c93
-*.color14: #33c5ba
-
-! white
-*.color7: #bfbaac
-*.color15: #fdf6e3
+! Stop Ctrl-Shift form entering ISO 14755 mode
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 !setting up font
-URxvt.font: 		xft:monospace:size=10
-URxvt.scrollBar: 	false
+! URxvt.font:       xft:iosevka:size=10
+! URxvt.font:        xft:monospace:size=10
+URxvt*font: xft:ubuntu mono derivative powerline:pixelsize=16:antialias=true:hinting=true
+
+URxvt.scrollBar:  false
+! urxvt.letterSpace: -5
+! URxvt.lineSpace:  0
 
 ! Perl Extensions
 URxvt.perl-lib: /usr/lib/urxvt/perl/
@@ -54,20 +115,19 @@ URxvt.keyboard-select.clipboard: true
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.autocopy: true
 URxvt.url-select.button: 0
-# URxvt.url-select.launcher:  browser/command to open selected URL with
+! URxvt.url-select.launcher:  browser/command to open selected URL with
 URxvt.url-select.underline: true
 
-# Clipboard options
-URxvt.keysym.C-c:   perl:clipboard:copy
-URxvt.keysym.C-v:   perl:clipboard:paste
-# URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+! Clipboard options
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+! URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.clipboard.autocopy: true
 URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o -selection clipboard
-
 
 URxvt.keysym.C-minus:     resize-font:smaller
 URxvt.keysym.C-plus:      resize-font:bigger
 URxvt.keysym.C-equal:     resize-font:reset
 URxvt.keysym.C-question:  resize-font:show
-URxvt.resize-font.step: 2
+URxvt.resize-font.step:   2
