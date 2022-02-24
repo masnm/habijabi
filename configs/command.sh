@@ -17,9 +17,9 @@ then
 	cp ./i3status.conf ~/.config/i3/i3status.conf
 	cp ./.tmux.conf ~/.tmux.conf
 	cp ./.Xdefaults ~/.Xdefaults
-	sudo mkdir -p /ust/lib/urxvt
-	sudo mkdir -p /ust/lib/urxvt/perl
-	cp -r ./urxvt_perl/ /usr/lib/urxvt/perl/
+	sudo mkdir -p /usr/lib/urxvt
+	sudo mkdir -p /usr/lib/urxvt/perl
+	sudo cp -r ./urxvt_perl/ /usr/lib/urxvt/perl/
 else
 	echo 'usage : command.sh [option]'
 	echo '[options] = { backup, restore }'
