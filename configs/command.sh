@@ -8,6 +8,9 @@ if [ "$1" == "backup" ]; then
 	cp ~/.config/i3/i3status.conf ./i3status.conf
 	cp ~/.tmux.conf ./.tmux.conf
 	cp ~/.Xdefaults ./.Xdefaults
+	cp ~/.bashrc ./.bashrc
+	cp ~/.bash_profile ./.bash_profile
+	cp ~/.bash_aliases ./.bash_aliases
 	cp -r /usr/lib/urxvt/perl/* ./
 elif [ "$1" == "restore" ]; then
 	cp ./.vimrc ~/.vimrc
@@ -15,6 +18,9 @@ elif [ "$1" == "restore" ]; then
 	cp ./i3status.conf ~/.config/i3/i3status.conf
 	cp ./.tmux.conf ~/.tmux.conf
 	cp ./.Xdefaults ~/.Xdefaults
+	cp ./.bashrc ~/.bashrc
+	cp ./.bash_profile ~/.bash_profile
+	cp ./.bash_aliases ~/.bash_aliases
 	sudo mkdir -p /usr/lib/urxvt
 	sudo mkdir -p /usr/lib/urxvt/perl
 	sudo cp -r ./urxvt_perl/ /usr/lib/urxvt/perl/
@@ -26,6 +32,9 @@ elif [ "$1" == "difference" ]; then
 	diff ./i3status.conf ~/.config/i3/i3status.conf
 	diff ./.tmux.conf ~/.tmux.conf
 	diff ./.Xdefaults ~/.Xdefaults
+	diff ./.bashrc ~/.bashrc
+	diff ./.bash_profile ~/.bash_profile
+	diff ./.bash_aliases ~/.bash_aliases
 else
 	echo 'usage : command.sh [option]'
 	echo '[options] = { backup, restore, difference }'
