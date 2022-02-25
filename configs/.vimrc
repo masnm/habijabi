@@ -93,5 +93,5 @@ noremap <Left>  <Nop>
 noremap <Right> <Nop>
 
 " enabling maximum columnwidth and enabling error
-set colorcolumn=80
-match ErrorMsg '\%>80v.\+'
+highlight ColorColumn ctermbg=red
+call matchadd('ColorColumn', '\%81v', 100)

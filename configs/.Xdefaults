@@ -96,15 +96,15 @@ URxvt.iso14755_52: false
 
 !setting up font
 ! URxvt.font:       xft:iosevka:size=10
-! URxvt.font:        xft:monospace:size=10
-URxvt*font: xft:ubuntu mono derivative powerline:pixelsize=16:antialias=true:hinting=true
+URxvt.font:        xft:monospace:size=10
+! URxvt*font: xft:ubuntu mono derivative powerline:pixelsize=16:antialias=true:hinting=true
 
 URxvt.scrollBar:  false
 ! urxvt.letterSpace: -5
 ! URxvt.lineSpace:  0
 
 ! Perl Extensions
-URxvt.perl-lib: /usr/lib/urxvt/perl/
+URxvt.perl-lib: /usr/lib/urxvt/perl/urxvt_perl/
 URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select,clipboard
 
 ! Keyboard Select

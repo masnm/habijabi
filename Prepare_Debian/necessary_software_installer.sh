@@ -13,6 +13,6 @@ sudo apt-get update && sudo apt update && sudo apt upgrade
 
 sudo apt autoremove
 
-sudo apt install gvfs-backends vim git lxappearance pavucontrol compton uget xclip i3lock-fancy materia-gtk-theme papirus-icon-theme gcc g++ gdb maim unzip tmux tree fonts-lohit-beng-bengali celluloid
+sudo apt install gvfs-backends vim git lxappearance pavucontrol compton uget xclip i3lock-fancy materia-gtk-theme papirus-icon-theme gcc g++ gdb maim unzip tmux tree fonts-lohit-beng-bengali celluloid feh curl
 
 sudo apt install -t bullseye-backports libreoffice libreoffice-gtk3
