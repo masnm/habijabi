@@ -2,16 +2,14 @@
 
 set -xe
 
-if [ "$1" == "backup" ]
-then
+if [ "$1" == "backup" ]; then
 	cp ~/.vimrc ./.vimrc
 	cp ~/.config/i3/config ./i3_config
 	cp ~/.config/i3/i3status.conf ./i3status.conf
 	cp ~/.tmux.conf ./.tmux.conf
 	cp ~/.Xdefaults ./.Xdefaults
 	cp -r /usr/lib/urxvt/perl/* ./
-elif [ "$1" == "restore" ]
-then
+elif [ "$1" == "restore" ]; then
 	cp ./.vimrc ~/.vimrc
 	cp ./i3_config ~/.config/i3/config
 	cp ./i3status.conf ~/.config/i3/i3status.conf
@@ -20,7 +18,15 @@ then
 	sudo mkdir -p /usr/lib/urxvt
 	sudo mkdir -p /usr/lib/urxvt/perl
 	sudo cp -r ./urxvt_perl/ /usr/lib/urxvt/perl/
+	sudo mkdir -p ~/.vim/colors
+	sudo cp ./xoria256.vim ~/.vim/colors/
+elif [ "$1" == "difference" ]; then
+	diff ./.vimrc ~/.vimrc
+	diff ./i3_config ~/.config/i3/config
+	diff ./i3status.conf ~/.config/i3/i3status.conf
+	diff ./.tmux.conf ~/.tmux.conf
+	diff ./.Xdefaults ~/.Xdefaults
 else
 	echo 'usage : command.sh [option]'
-	echo '[options] = { backup, restore }'
+	echo '[options] = { backup, restore, difference }'
 fi
