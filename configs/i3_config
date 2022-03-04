@@ -194,5 +194,8 @@ bindsym $mod+x exec i3lock-fancy
 # Compton for Fixing screen tearing
 exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc --no-fading-openclose
 
+# Make all the window title less
+for_window [class="^.*"] border pixel 1
+
 # Make Pavucontrol Floating
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
