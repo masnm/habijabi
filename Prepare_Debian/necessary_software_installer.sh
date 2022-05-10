@@ -15,6 +15,6 @@ sudo apt autoremove
 
 sudo apt install time --reinstall
 
-sudo apt install gvfs-backends vim git lxappearance pavucontrol compton uget xclip i3lock-fancy materia-gtk-theme papirus-icon-theme gcc g++ gdb maim unzip tmux tree fonts-lohit-beng-bengali celluloid feh curl transmission mousepad
+sudo apt install uget unzip transmission
 
 sudo apt install -t bullseye-backports libreoffice libreoffice-gtk3
