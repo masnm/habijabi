@@ -9,12 +9,6 @@ sudo mv backport.list /etc/apt/sources.list.d/backport.list
 localectl status
 timedatectl
 
-sudo apt-get update && sudo apt update && sudo apt upgrade
-
-sudo apt autoremove
-
-sudo apt install time --reinstall
-
-sudo apt install uget unzip transmission
+sudo apt-get update && sudo apt update && sudo apt upgrade autoremove
 
 sudo apt install -t bullseye-backports libreoffice libreoffice-gtk3
