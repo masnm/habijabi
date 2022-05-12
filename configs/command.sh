@@ -2,40 +2,47 @@
 
 set -xe
 
-if [ "$1" == "backup" ]; then
-	cp ~/.vimrc ./.vimrc
-	cp ~/.config/i3/config ./i3_config
-	cp ~/.config/i3/i3status.conf ./i3status.conf
-	cp ~/.tmux.conf ./.tmux.conf
-	cp ~/.Xdefaults ./.Xdefaults
-	cp ~/.bashrc ./.bashrc
-	cp ~/.bash_profile ./.bash_profile
-	cp ~/.bash_aliases ./.bash_aliases
-	cp -r /usr/lib/urxvt/perl/* ./
-elif [ "$1" == "restore" ]; then
-	cp ./.vimrc ~/.vimrc
-	cp ./i3_config ~/.config/i3/config
-	cp ./i3status.conf ~/.config/i3/i3status.conf
-	cp ./.tmux.conf ~/.tmux.conf
-	cp ./.Xdefaults ~/.Xdefaults
-	cp ./.bashrc ~/.bashrc
-	cp ./.bash_profile ~/.bash_profile
-	cp ./.bash_aliases ~/.bash_aliases
-	sudo mkdir -p /usr/lib/urxvt
-	sudo mkdir -p /usr/lib/urxvt/perl
-	sudo cp -r ./urxvt_perl/ /usr/lib/urxvt/perl/
-	sudo mkdir -p ~/.vim/colors
-	sudo cp ./xoria256.vim ~/.vim/colors/
-elif [ "$1" == "difference" ]; then
-	diff ./.vimrc ~/.vimrc
-	diff ./i3_config ~/.config/i3/config
-	diff ./i3status.conf ~/.config/i3/i3status.conf
-	diff ./.tmux.conf ~/.tmux.conf
-	diff ./.Xdefaults ~/.Xdefaults
-	diff ./.bashrc ~/.bashrc
-	diff ./.bash_profile ~/.bash_profile
-	diff ./.bash_aliases ~/.bash_aliases
-else
-	echo 'usage : command.sh [option]'
-	echo '[options] = { backup, restore, difference }'
+#bashes
+files_array=("~/.bashrc" "~/.bash_aliases" "~/.bash_profile")
+for file in ${files_array[@]}; do
+	if [[ -f $file ]]; then
+		rm $file
+	fi
+done
+
+ln ./.bashrc ~/.bashrc 
+ln ./.bash_aliases ~/.bash_aliases
+ln ./.bash_profile ~/.bash_profile
+
+# i3 configs
+files_array=("~/.config/i3/config" "~/.config/i3/i3status.conf")
+for file in ${files_array[@]}; do
+	if [[ -f $file ]]; then
+		rm $file
+	fi
+done
+ln ./i3_config ~/.config/i3/config
+ln ./i3status.conf ~/.config/i3/i3status.conf
+
+# tmux
+if [[ -f ~/.tmux.conf ]]; then
+	rm ~/.tmux.conf
 fi
+ln ./.tmux.conf ~/.tmux.conf
+
+# vim
+if [[ -f ~/.vimrc ]]; then
+	rm ~/.vimrc
+fi
+ln ./.vimrc ~/.vimrc
+mkdir -p ~/.vim/colors
+if [[ -f ~/.vim/colors/xoria256.vim ]]; then
+	rm ~/.vim/colors/xoria256.vim
+fi
+ln ./xoria256.vim ~/.vim/colors/xoria256.vim
+
+# sudo mkdir -p /usr/lib/urxvt
+# sudo mkdir -p /usr/lib/urxvt/perl
+# sudo cp -r ./urxvt_perl/ /usr/lib/urxvt/perl/
+# sudo mkdir -p ~/.vim/colors
+# sudo cp ./xoria256.vim ~/.vim/colors/
