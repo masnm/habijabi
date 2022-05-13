@@ -73,7 +73,9 @@ set notermguicolors
 colorscheme xoria256
 
 " setting the 'makeprg' variable
-set makeprg=my_code_compile_cmnd.sh\ %
+if empty(glob("./Makefile"))
+	set makeprg=my_code_compile_cmnd.sh\ %
+endif
 
 " Test command inside vim
 command! Test !my_verdict_cmnd.sh %
