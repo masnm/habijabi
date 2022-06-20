@@ -15,6 +15,14 @@ if [[ "$1" == *.cpp ]]; then
 		rm ${filename::-4}.out
 	fi
 
+elif [[ "$1" == *.c ]]; then
+	gcc -std=c11 -Wshadow -Wall -o ${filename::-2}.out $1 -O2 -Wno-unused-result
+
+	if [ $? == 0 ]; then
+		command time -f "%Mkb %Us" ./${filename::-2}.out < intm > outtm
+		rm ${filename::-2}.out
+	fi
+
 else
 	echo -e '\e[0;31m#___Not Inplementd Yet___#\e[m'
 	exit 1
