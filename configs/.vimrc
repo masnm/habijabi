@@ -33,7 +33,8 @@ autocmd FileType cpp set path+=/usr/include/c++/11/
 set wildmenu
 
 " Create the `tags` file
-" command! MakeTags !ctags -R .
+set tags+=/usr/include/tags
+command! MakeTags !ctags -R .
 
 "FILE BROWING
 "Tweaks for browsing
@@ -63,16 +64,18 @@ nnoremap ,ycn mmG7kvld<ESC>`m
 set listchars=tab:·\ ,
 set list
 
-call plug#begin()
-	Plug 'octol/vim-cpp-enhanced-highlight'
-call plug#end()
+" Call plug#begin()
+" 	Plug 'octol/vim-cpp-enhanced-highlight'
+" Call plug#end()
 
 set notermguicolors
 " colorscheme elflord
 colorscheme xoria256
 
 " setting the 'makeprg' variable
-set makeprg=my_code_compile_cmnd.sh\ %
+if empty(glob("./Makefile"))
+	set makeprg=my_code_compile_cmnd.sh\ %
+endif
 
 " Test command inside vim
 command! Test !my_verdict_cmnd.sh %
