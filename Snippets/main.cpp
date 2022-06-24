@@ -35,13 +35,20 @@ sim dor(const c&) { ris; }
 #define S second
 #define eb emplace_back
 
+string read_string ()
+{
+	static char ch[1000005];
+	scanf ( "%s", ch );
+	return string ( ch );
+}
+
 using ll = long long int;
 
 void solve ()
 {
 }
 
-int main ()
+int main ( int argc, char* argv[] )
 {
 	int t = 1;
 	scanf ( "%d" , &t );

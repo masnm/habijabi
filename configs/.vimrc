@@ -2,7 +2,7 @@
 set nocompatible
 
 " all 256 bit colors
-set termguicolors
+" set termguicolors
 
 " enable folding
 set foldmethod=indent
@@ -27,7 +27,6 @@ set dictionary+=/usr/share/dict/american-english
 " search down into subfolders
 " Provides tab-completaion for all file-related tasks
 set path+=**
-autocmd FileType cpp set path+=/usr/include/c++/11/
 
 " Display all matching files when we tab complete
 set wildmenu
@@ -47,10 +46,9 @@ let g:netrw_list_hide.=',\(^\|\s\s)\zs\.\s\+'
 " - cheak |netrw-browse-maps|
 
 "snipits : if needed cheak net or watch video
-nnoremap ,cc :-1read $HOME/codes/habijabi/Snippets/main.c<CR>4ggo<CR>
-nnoremap ,cpp :-1read $HOME/codes/habijabi/Snippets/main.cpp<CR>38ggzt
+nnoremap ,cc :-1read $HOME/codes/habijabi/Snippets/main.c<CR>11ggo<CR>
+nnoremap ,cpp :-1read $HOME/codes/habijabi/Snippets/main.cpp<CR>45ggzt
 nnoremap ,java :-1read $HOME/codes/habijabi/Snippets/main.java<CR>8ggf{hi
-nnoremap ,rs mmG?using<CR>j:-1read $HOME/codes/habijabi/Snippets/read_string.cpp<CR>2jf[a
 
 " scan test cases
 nnoremap ,ntc mmG9ki//<ESC>`m
@@ -68,7 +66,7 @@ set list
 " 	Plug 'octol/vim-cpp-enhanced-highlight'
 " Call plug#end()
 
-set notermguicolors
+" set notermguicolors
 " colorscheme elflord
 colorscheme xoria256
 
