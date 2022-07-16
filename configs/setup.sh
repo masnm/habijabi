@@ -45,6 +45,7 @@ if [[ $response == [Yy] ]]; then
 	git config --global user.email nomanahmmed0@gmail.com
 	git config --global core.editor vim
 	git config --global init.defaultBranch master
+	git config --global diff.tool vimdiff
 
 	TOTALKEY=$(gpg --list-secret-keys --keyid-format=long | grep sec)
 	TOTALKEY=${TOTALKEY:14:16}

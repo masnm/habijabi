@@ -46,9 +46,10 @@ let g:netrw_list_hide.=',\(^\|\s\s)\zs\.\s\+'
 " - cheak |netrw-browse-maps|
 
 "snipits : if needed cheak net or watch video
-nnoremap ,cc :-1read $HOME/codes/habijabi/Snippets/main.c<CR>11ggo<CR>
+nnoremap ,cc :-1read $HOME/codes/habijabi/Snippets/main.c<CR>7ggo<CR>
 nnoremap ,cpp :-1read $HOME/codes/habijabi/Snippets/main.cpp<CR>45ggzt
 nnoremap ,java :-1read $HOME/codes/habijabi/Snippets/main.java<CR>8ggf{hi
+nnoremap ,html :-1read $HOME/codes/habijabi/Snippets/main.html<CR>6ggwww
 
 " scan test cases
 nnoremap ,ntc mmG9ki//<ESC>`m
@@ -96,3 +97,7 @@ noremap <Right> <Nop>
 " enabling maximum columnwidth and enabling error
 highlight ColorColumn ctermbg=red
 call matchadd('ColorColumn', '\%81v', 100)
+
+" wrap text on specific column
+" set textwidth=80
+" set wrapmargin=2
