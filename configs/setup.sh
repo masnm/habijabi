@@ -20,6 +20,11 @@ if [[ $response == [Yy] ]]; then
 	ln -s $(pwd)/.vimrc ~/.vimrc
 fi
 
+read -p "Want to setup Tmux Conf? [Y/N] " response
+if [[ $response == [Yy] ]]; then
+	ln -s $(pwd)/.tmux.conf ~/.tmux.conf
+fi
+
 read -p "Want to setup Xoria256 color in Vim? [Y/N] " response
 if [[ $response == [Yy] ]]; then
 	mkdir -p $HOME/.vim/colors
