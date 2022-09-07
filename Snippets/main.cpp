@@ -35,7 +35,7 @@ sim dor(const c&) { ris; }
 #define S second
 #define eb emplace_back
 
-string read_string ()
+string read_string ( void )
 {
 	static char ch[1000005];
 	scanf ( "%s", ch );
@@ -44,17 +44,17 @@ string read_string ()
 
 using ll = long long int;
 
-void solve ()
+inline void solve ( int _case )
 {
 }
 
-int main ( int argc, char* argv[] )
+int main ( void )
 {
-	int t = 1;
-	scanf ( "%d" , &t );
-	for ( int i = 0 ; i < t ; ++i ) {
+	int _t = 1;
+	scanf ( "%d" , &_t );
+	for ( int i = 0 ; i < _t ; ++i ) {
 //		printf ( "Case %d: ", i+1 );
-		solve ();
+		solve ( i+1 );
 	}
 
 

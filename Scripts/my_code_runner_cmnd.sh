@@ -9,9 +9,9 @@ filename=$1
 
 if [[ "$1" == *.c ]]; then
 	if [ "$2" == "-f" ]; then
-		gcc -std=c11 -Wshadow -Wall -o ${filename::-2}.out $1 -O2 -Wno-unused-result
+		gcc -std=c11 -Wshadow -Wall -Wextra -pedantic -o ${filename::-2}.out $1 -O2 -Wno-unused-result
 	elif [ "$2" == "" ]; then
-		gcc -std=c11 -Wshadow -Wall -o ${filename::-2}.out $1 -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -DLOCAL
+		gcc -std=c11 -Wshadow -Wall -Wextra -pedantic -o ${filename::-2}.out $1 -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -DLOCAL
 	else
 		echo -e '\e[0;31m#___Undefined flag' ' $2 ' '___#\e[m'
 		exit 1
@@ -24,9 +24,9 @@ if [[ "$1" == *.c ]]; then
 
 elif [[ "$1" == *.cpp ]]; then
 	if [ "$2" == "-f" ]; then
-		g++ -std=c++17 -Wshadow -Wall -o ${filename::-4}.out $1 -O2 -Wno-unused-result
+		g++ -std=c++17 -Wshadow -Wall -Wextra -pedantic -o ${filename::-4}.out $1 -O2 -Wno-unused-result
 	elif [ "$2" == "" ]; then
-		g++ -std=c++17 -Wshadow -Wall -o ${filename::-4}.out $1 -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -DLOCAL
+		g++ -std=c++17 -Wshadow -Wall -Wextra -pedantic -o ${filename::-4}.out $1 -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -DLOCAL
 	else
 		echo -e '\e[0;31m#___Undefined flag' ' $2 ' '___#\e[m'
 		exit 1

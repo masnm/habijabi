@@ -9,7 +9,7 @@ fi
 
 if [[ "$1" == *.c ]]; then
 	filename=$1
-	gcc -std=c11 -Wshadow -Wall -o ${filename::-2}.out $1 -fsanitize=address -fsanitize=undefined     -D_GLIBCXX_DEBUG -g -DLOCAL
+	gcc -std=c11 -Wshadow -Wall -Wextra -pedantic -o ${filename::-2}.out $1 -fsanitize=address -fsanitize=undefined     -D_GLIBCXX_DEBUG -g -DLOCAL
 	if [ $? != 0 ]; then
 		exit 1
 	fi
@@ -31,7 +31,7 @@ if [[ "$1" == *.c ]]; then
 
 elif [[ "$1" == *.cpp ]]; then
 	filename=$1
-	g++ -std=c++17 -Wshadow -Wall -o ${filename::-4}.out $1 -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -DLOCAL
+	g++ -std=c++17 -Wshadow -Wall -Wextra -pedantic -o ${filename::-4}.out $1 -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -DLOCAL
 	if [ $? != 0 ]; then
 		exit 1
 	fi

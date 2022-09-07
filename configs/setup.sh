@@ -2,6 +2,7 @@
 
 read -p "Want to setup Bash Aliases? [Y/N] " response
 if [[ $response == [Yy] ]]; then
+	echo 'Setting up Bash Aliases'
 	ln -s $(pwd)/.bash_aliases ~/.bash_aliases
 	declare -a StringArray=(
 		""
@@ -17,22 +18,26 @@ fi
 
 read -p "Want to setup Vimrc? [Y/N] " response
 if [[ $response == [Yy] ]]; then
+	echo 'Setting up Vimrc'
 	ln -s $(pwd)/.vimrc ~/.vimrc
 fi
 
 read -p "Want to setup Tmux Conf? [Y/N] " response
 if [[ $response == [Yy] ]]; then
+	echo 'Setting up Tmux Conf'
 	ln -s $(pwd)/.tmux.conf ~/.tmux.conf
 fi
 
 read -p "Want to setup Xoria256 color in Vim? [Y/N] " response
 if [[ $response == [Yy] ]]; then
+	echo 'Setting up Xoria256 for Vim'
 	mkdir -p $HOME/.vim/colors
 	cp $(pwd)/xoria256.vim $HOME/.vim/colors/
 fi
 
-read -p "Want to setup tag jump in include? [Y/N] " response
+read -p "Want to setup tag jump to include? [Y/N] " response
 if [[ $response == [Yy] ]]; then
+	echo 'Setting up Tag jump to include'
 	if ! command -v ctags &> /dev/null
 	then
 		echo "Command `ctags` not found. exiting abnormally"
@@ -46,6 +51,7 @@ fi
 
 read -p "Want to setup git configure? [Y/N] " response
 if [[ $response == [Yy] ]]; then
+	echo 'Setting up git configure'
 	git config --global user.name "Ahmmed Sakib Noman"
 	git config --global user.email nomanahmmed0@gmail.com
 	git config --global core.editor vim

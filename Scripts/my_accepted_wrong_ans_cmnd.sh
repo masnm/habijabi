@@ -12,7 +12,7 @@ fi
 if [ -f $1.c ]
 then
 	# compiling the code
-	gcc -std=c11 -Wshadow -Wall -o $1.out $1.c -O2 -Wno-unused-result
+	gcc -std=c11 -Wshadow -Wall -Wextra -pedantic -o $1.out $1.c -O2 -Wno-unused-result
 
 	# loopint all the input and testing
 	for (( i = 1 ; i < 6 ; ++i ));
@@ -40,8 +40,8 @@ then
 elif [ -f $1.cpp ]
 then
 	# compiling the code
-	g++ -std=c++17 -Wshadow -Wall -o $1.out $1.cpp -O2 -Wno-unused-result
-	
+	g++ -std=c++17 -Wshadow -Wall -Wextra -pedantic -o $1.out $1.cpp -O2 -Wno-unused-result
+
 	# loopint all the input and testing
 	for (( i = 1 ; i < 6 ; ++i ));
 	do
