@@ -165,3 +165,9 @@ if [[ $response == [Yy] ]]; then
 		echo -e $String
 	done
 fi
+
+read -p "Want to setup xmodmap config? [Y/N] " response
+if [[ $response == [Yy] ]]; then
+	echo 'Setting up xmodmap configure'
+	xmodmap -pke > ~/.Xmodmap
+fi
