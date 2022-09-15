@@ -22,3 +22,6 @@ xorg-xinit
 xorg-xmodmap
 xorg-xrdb
 xss-lock
+libnotify
+notification-daemon
+noto-fonts-emoji
