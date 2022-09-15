@@ -99,49 +99,7 @@ fi
 read -p "Want to setup i3 config? [Y/N] " response
 if [[ $response == [Yy] ]]; then
 	echo 'Setting up i3 configure'
-	declare -a StringArray=(
-		"# Setup for i3 by masnm"
-		""
-		"# Sreen brightness controls"
-		"bindsym XF86MonBrightnessUp exec brightnessctl set +10% $refresh_i3status"
-		"bindsym XF86MonBrightnessDown exec brightnessctl set 10%- $refresh_i3status"
-		""
-		"# Touchpad controls"
-		"bindsym XF86TouchpadToggle exec --no-startup-id \"synclient TouchpadOff=\$(synclient -l | grep -c 'TouchpadOff.*0')\""
-		""
-		"# Media player controls"
-		"bindsym XF86AudioPlay exec --no-startup-id playerctl play"
-		"bindsym XF86AudioPause exec --no-startup-id playerctl pause"
-		"bindsym XF86AudioNext exec --no-startup-id playerctl next"
-		"bindsym XF86AudioPrev exec --no-startup-id playerctl previous"
-		""
-		"# fixing screen tearing"
-		"exec_always xrandr --output eDP --set TearFree on"
-		""
-		"# setting wallpaper"
-		"exec_always feh --bg-fill ~//Pictures/Wallpapers/archlinux-wp.jpg"
-		""
-		"#Save a desktop screenshot with a unique ordered timestamp in the Pictures folder."
-		"bindsym Print exec maim ~/Pictures/Screenshot/$(date +%s).png"
-		"# Screenshot example"
-		"bindsym Shift+Print exec maim -s | xclip -selection clipboard -t image/png"
-		""
-		"# Compton for Fixing screen tearing"
-		"# exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc --no-fading-openclose"
-		""
-		"# Lock screen shortcut"
-		"bindsym $mod+x exec i3lock"
-		""
-		"# Make all the window title less"
-		"for_window [class=\"^.*\"] border pixel 1"
-		""
-		"# Make Pavucontrol Floating"
-		"for_window [class=\"Pavucontrol\" instance=\"pavucontrol\"] floating enable"
-		"for_window [class=\"gnome-calculator\" instance=\"gnome-calculator\"] floating enable"
-	)
-	for String in "${StringArray[@]}"; do
-		echo -e $String >> $HOME/.config/i3/config
-	done
+	echo ./my_i3_configs >> $HOME/.config/i3/config
 	echo "Replace next line manually"
 	echo -e "bindsym $mod+d exec --no-startup-id dmenu_run -fn \"monospace Bold:size=10\" -p \"➜ \" -nb \"#282a36\" -nf \"#c3c3c0\" -sb \"#282a36\" -sf \"#50fa7b\""
 fi
