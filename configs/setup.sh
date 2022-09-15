@@ -171,3 +171,9 @@ if [[ $response == [Yy] ]]; then
 	echo 'Setting up xmodmap configure'
 	xmodmap -pke > ~/.Xmodmap
 fi
+
+read -p "Want to setup bluetooth config? [Y/N] " response
+if [[ $response == [Yy] ]]; then
+	echo 'Setting up bluetooth configure'
+	sudo systemctl enable --now bluetooth
+fi
