@@ -1,0 +1,40 @@
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec brightnessctl set +10% && $refresh_i3status
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%- && $refresh_i3status
+
+# Touchpad controls
+bindsym Control+$mod+XF86TouchpadToggle exec --no-startup-id /home/masnm/.config/i3/touchpad_toggle.sh
+
+# Media player controls
+bindsym XF86AudioPlay exec --no-startup-id /usr/bin/playerctl play
+bindsym XF86AudioPause exec --no-startup-id /usr/bin/playerctl pause
+bindsym XF86AudioNext exec --no-startup-id /usr/bin/playerctl next
+bindsym XF86AudioPrev exec --no-startup-id /usr/bin/playerctl previous
+
+# Starting blueman applet for managing bluetooth from system tray
+exec --no-startup-id blueman-applet
+
+# fixing screen tearing
+exec_always xrandr --output eDP --set TearFree on
+
+# setting wallpaper
+exec_always feh --bg-fill $HOME/Pictures/Wallpapers/archlinux-wp.jpg
+
+#Save a desktop screenshot with a unique ordered timestamp in the Pictures folder.
+bindsym Print exec maim $HOME/Pictures/Screenshot/1663181264.png
+# Screenshot example
+bindsym Shift+Print exec maim -s | xclip -selection clipboard -t image/png
+
+# Compton for Fixing screen tearing
+# exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc --no-fading-openclose
+
+# Lock screen shortcut
+bindsym $mod+x exec i3lock
+
+# Make all the window title less
+for_window [class="^.*"] border pixel 1
+
+# Make Pavucontrol Floating
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="gnome-calculator" instance="gnome-calculator"] floating enable
+for_window [class="blueman-manager" instance="blueman-manager"] floating enable
