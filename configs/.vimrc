@@ -4,6 +4,9 @@ set nocompatible
 " all 256 bit colors
 " set termguicolors
 
+" enable search highliting
+set hlsearch
+
 " enable folding
 set foldmethod=indent
 set foldnestmax=10
@@ -36,13 +39,18 @@ set tags+=/usr/include/tags
 command! MakeTags !ctags -R .
 
 "FILE BROWING
+let g:netrw_chgwin    = 2
+let g:netrw_preview   = 1
+let g:netrw_liststyle = 3
+let g:netrw_winsize   = 30
+"autocmd VimEnter * 20Lexplore
 "Tweaks for browsing
-let g:netrw_banner=0		"disable annoying banner
-let g:netrw_browee_split=4	"open in prior window
-let g:netrw_altv=1		"open splits to the right
-let g:netrw_liststyle=3		"tree view
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s)\zs\.\s\+'
+"let g:netrw_banner=0		"disable annoying banner
+"let g:netrw_browee_split=4	"open in prior window
+"let g:netrw_altv=1          "open splits to the right
+"let g:netrw_liststyle=3     "tree view
+"let g:netrw_list_hide=netrw_gitignore#Hide()
+"let g:netrw_list_hide.=',\(^\|\s\s)\zs\.\s\+'
 " - cheak |netrw-browse-maps|
 
 " Enabling syntal highlight in glsl
