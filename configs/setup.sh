@@ -64,32 +64,6 @@ if [[ $response == [Yy] ]]; then
 	git config --global user.signingkey $TOTALKEY
 fi
 
-read -p "Want to setup xterm configure? [Y/N] " response
-if [[ $response == [Yy] ]]; then
-	echo 'Setting up xterm configure'
-	CURRENT_DIR=$(pwd)
-	cd $HOME
-	cp /etc/X11/xinit/xinitrc $HOME/.xinitrc
-	touch $HOME/.Xresources
-	declare -a StringArray=(
-		"#include \".Xresources.d/xterm\""
-	)
-	for String in "${StringArray[@]}"; do
-		echo -e $String >> $HOME/.Xresources
-	done
-	mkdir -p $HOME/.Xresources.d
-	touch $HOME/.Xresources.d/xterm
-	cd $CURRENT_DIR
-	cp ./xterm $HOME/.Xresources.d/xterm
-fi
-
-read -p "Want to see bash PS1 update? [Y/N] " response
-if [[ $response == [Yy] ]]; then
-	echo 'Showing bash PS1 update: '
-	echo "PROMPT_COMMAND='lstatus=${?##0}'"
-	echo "PS1='[\u@\h \W] $lstatus \$ '"
-fi
-
 read -p "Want to setup touchpad config? [Y/N] " response
 if [[ $response == [Yy] ]]; then
 	echo 'Setting up touchpad configure'
@@ -124,14 +98,14 @@ if [[ $response == [Yy] ]]; then
 	done
 fi
 
-read -p "Want to setup xmodmap config? [Y/N] " response
-if [[ $response == [Yy] ]]; then
-	echo 'Setting up xmodmap configure'
-	xmodmap -pke > ~/.Xmodmap
-fi
-
 read -p "Want to setup bluetooth config? [Y/N] " response
 if [[ $response == [Yy] ]]; then
 	echo 'Setting up bluetooth configure'
 	sudo systemctl enable --now bluetooth
+fi
+
+read -p "Want to setup urxvt config? [Y/N] " response
+if [[ $response == [Yy] ]]; then
+	echo 'Setting up urxvt configure'
+	ln -s $(pwd)/.Xdefaults ~/.Xdefaults
 fi

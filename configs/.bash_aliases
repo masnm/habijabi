@@ -1,7 +1,7 @@
 # some more ls aliases
-alias ll='lsd -la'
-alias la='lsd -A'
-alias l='lsd -F'
+alias ll='ls -la'
+alias la='ls -A'
+alias l='ls -F'
 
 # cal current date highlight
 # alias cal='ncal -b'
