@@ -1,0 +1,29 @@
+[bandwidth]
+command=/home/masnm/codes/habijabi/configs/i3blocks/bandwidth
+interval=5
+#INTERFACE=wlan0
+INLABEL= 
+OUTLABEL= 
+#TREAT_UNKNOWN_AS_UP=0
+
+[memory]
+command=/home/masnm/codes/habijabi/configs/i3blocks/memory
+label=    
+interval=30
+
+#[memory]
+#command=$SCRIPT_DIR/memory
+#label=SWAP
+#instance=swap
+#interval=30
+
+# calender
+[calendar]
+command=/home/masnm/codes/habijabi/configs/i3blocks/calendar
+interval=1
+LABEL= 
+DATEFMT=+%H:%M:%S
+# SHORTFMT=+%H:%M:%S
+# HEIGHT=180
+# WIDTH=220
+

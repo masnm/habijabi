@@ -99,6 +99,9 @@ command! TM !my_time_memory_usage_cmnd.sh %
 " Copy file to clipboard for submitting
 command! Sub !my_input_submit_cmnd.sh %
 
+" Check for accepted or wrong and
+command! Ver !my_accepted_wrong_ans_cmnd.sh %
+
 " remapping arrow keys
 noremap <Up>    <Nop>
 noremap <Down>  <Nop>
