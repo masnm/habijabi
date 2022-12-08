@@ -1,26 +1,5 @@
 # habijabi
 
-### Comment the cdrm line in source repos
-```console
-sudo vi /etc/apt/sources.list
-```
-
-### Install the WM and necessary packages
-```console
-sudo apt install i3 xorg lightdm slick-greeter lightdm-settings lxappearance nitrogen thunar firefox-esr pulseaudio alsa-utils pavucontrol terminator compton i3lock-fancy
-```
-
-### Enable the lightdm greeter
-```console
-sudo systemctl enable lightdm
-```
-
-### Install the updates
-Change the update preferences in Software
-```console
-sudo apt-get update && sudo apt update && sudo apt upgrade
-```
-
 ### Restoring ssh and gpg key
 
 ##### Backup: Change {drive name}
@@ -38,21 +17,6 @@ sudo apt-get update && sudo apt update && sudo apt upgrade
 	ssh-add ~/.ssh/id_ed25519
 	cp /media/masnm/{drive name} ./my-private-key.asc
 	gpg --import my-private-key.asc
-
-### Install some nacessary apps / packages
-```console
-sudo apt install git vim gcc g++ xclip uget gdb
-```
-
-### Install Materia theme and icon
-```console
-sudo apt install materia-gtk-theme papirus-icon-theme
-```
-
-### Packages for engine development
-```console
-sudo dnf install libx11-dev libgl1-mesa-dev libglew-dev libpng-dev
-```
 
 ### Android phone auto mounter if already not working
 ```console
@@ -97,15 +61,3 @@ sudo apt install gvfs-backends  # `gvfs-mtp` for fedora
 		Privacy Badger
 		HTTPS Everywhere
 		containers
-
-
-
-## ***->->-> Sound solution <-<-<-***
-I found a solution for this issue: There is an option in the hda driver to disable the Jack detection. I made a udev rule to enforce this before boot:
-
-	/etc/udev/rules.d/jackdetect.rules
-	
-	ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALCS1200A", ATTR{hints}="jack_detect=false"
-	ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALCS1200A", ATTR{reconfig}="1"
-	
-You can find your chip_name in /sys/class/sound/hwC?D?/chip_name, or use something else as a selector...
