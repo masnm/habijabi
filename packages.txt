@@ -1,5 +1,64 @@
 git
 xclip
+xfce4-power-manager-settings
+rxvt-unicode
+materia-gtk-theme
+papirus-icon-theme
+lxappearance
+git
+zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
+vim
+xclip
+i3blocks
+compton
+thunar
+thunar-volman
+acpi
+fontawesome-fonts
+sysstat
+xreader
+gcc
+g++
+clang
+clang-tools-extra
+gvfs-mtp
+blueman
+bluez
+bluez-tools
+xset
+playerctl
+xreader
+transmission
+vlc
+
+
+
+TODO::
+- [ ] understand xset
+- [ ] understand playerctl
+- [ ] make .zshrc as symlink
+- [ ] fix unused command options
+	Want to setup Bash Aliases? [Y/N] N
+	Want to setup Vimrc? [Y/N] Y
+	Setting up Vimrc
+	Want to setup Tmux Conf? [Y/N] Y
+	Setting up Tmux Conf
+	Want to setup Xoria256 color in Vim? [Y/N] Y
+	Setting up Xoria256 for Vim
+	Want to setup tag jump to include? [Y/N] Y
+	Setting up Tag jump to include
+	Want to setup git configure? [Y/N] Y
+	Setting up git configure
+	Want to setup touchpad config? [Y/N] Y
+	Setting up touchpad configure
+	Want to setup i3 config? [Y/N] N
+	Want to setup i3status config? [Y/N] N
+	Want to setup bluetooth config? [Y/N] N
+	Want to setup urxvt config? [Y/N] Y
+	Setting up urxvt configure
+
 
 
 
@@ -25,8 +84,6 @@ ctags
 unzip
 vim
 xclip
-[masnm@arch ~]$ vim abc.txt 
-[masnm@arch ~]$ cat abc.txt 
 bash-completion
 blueman
 bluez

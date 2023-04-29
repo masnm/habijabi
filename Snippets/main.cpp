@@ -1,6 +1,7 @@
 #include "bits/stdc++.h"
 using namespace std;
 
+// clang-format off
 #define sim template < class c
 #define ris return * this
 #define dor > debug & operator <<
@@ -30,33 +31,30 @@ sim dor(const c&) { ris; }
 };
 #define imie(...) " [" << #__VA_ARGS__ ": " << (__VA_ARGS__) << "] "
 // debug & operator << (debug & dd, P p) { dd << "(" << p.x << ", " << p.y << ")"; return dd; }
+// clang-format on
 
-#define F first
-#define S second
+#define F  first
+#define S  second
 #define eb emplace_back
 
-string read_string ( void )
-{
-	static char ch[1000005];
-	scanf ( "%s", ch );
-	return string ( ch );
+string read_string ( void ) {
+    static char ch[1000005];
+    scanf ( "%s", ch );
+    return string ( ch );
 }
 
 using ll = long long int;
 
-inline void solve ( int _case )
-{
+inline void solve ( int _case ) {
 }
 
-int main ( void )
-{
-	int _t = 1;
-	scanf ( "%d" , &_t );
-	for ( int i = 0 ; i < _t ; ++i ) {
-//		printf ( "Case %d: ", i+1 );
-		solve ( i+1 );
-	}
+int main ( void ) {
+    int _t = 1;
+    scanf ( "%d", &_t );
+    for ( int i = 0; i < _t; ++i ) {
+        // printf ( "Case %d: ", i + 1 );
+        solve ( i + 1 );
+    }
 
-
-	return 0;
+    return 0;
 }

@@ -16,6 +16,9 @@ then
 	else
 		exit 1
 	fi
+elif [ -f $1.py ]; then
+	echo -e '\e[0;32m#Wrong tool for wrong language#\e[m'
+
 elif [ -f $1.cpp ]
 then
 	g++ -std=c++17 -Wshadow -Wall -o $1.out $1.cpp -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -DLOCAL

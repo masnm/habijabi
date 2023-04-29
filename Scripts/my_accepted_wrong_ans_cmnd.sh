@@ -65,6 +65,30 @@ then
 		fi
 	done
 	rm $1.out
+elif [ -f $1.py ]
+then
+	# loopint all the input and testing
+	for (( i = 1 ; i < 6 ; ++i ));
+	do
+		if [ -f $1in$i ]
+		then
+			python3 $1.py < $1in$i > script_output
+			DIFF=$(diff -wB script_output $1out$i)
+			rm script_output
+			if [ "$DIFF" == "" ]
+			then
+				echo -e '\e[0;32m#________Accepted________#\e[m'
+			else
+				echo -e '\e[0;31m#________Wrong Answer________#\e[m'
+				echo -e '\e[0;32m# On test ' $i ' #\e[m'
+				echo -e '\e[0;32mAnswer : \e[m'
+				cat $1out$i
+				echo -e '\e[0;31mOutput : \e[m'
+				python3 $1.py < $1in$i
+				exit 1
+			fi
+		fi
+	done
 elif [ -f $1.java ]
 then
 	# java file

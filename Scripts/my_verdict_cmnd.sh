@@ -51,6 +51,21 @@ elif [[ "$1" == *.cpp ]]; then
 
 	rm ${filename::-4}.out
 
+elif [[ "$1" == *.py ]]; then
+	filename=$1
+	if [ "$2" == "" ]; then
+		for (( i = 1 ; i < 6 ; ++i ));
+		do
+			if [ -f ${filename::-3}in$i ]; then
+				printf '\e[0;33m Output '$i'\e[m\n'
+				python3 $filename < ${filename::-3}in$i
+			fi
+		done
+	else
+		echo 'Output '$2
+		python3 filename < $2
+	fi
+
 elif [[ "$1" == *.java ]]; then
 	filename=$1
 	javac $1

@@ -23,6 +23,9 @@ elif [[ "$1" == *.c ]]; then
 		rm ${filename::-2}.out
 	fi
 
+elif [[ "$1" == *.py ]]; then
+	command time -f "%Mkb %Us" python3 $filename < intm > outtm
+
 else
 	echo -e '\e[0;31m#___Not Inplementd Yet___#\e[m'
 	exit 1

@@ -17,8 +17,9 @@ set foldlevel=1
 set number
 set relativenumber
 filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
+set autoindent expandtab tabstop=4 shiftwidth=4
+" set tabstop=4
+" set shiftwidth=4
 
 " enable syntax and plugin (for netrw)
 syntax enable
@@ -71,7 +72,7 @@ nnoremap ,ncn mmG7ki//<ESC>`m
 nnoremap ,ycn mmG7kvld<ESC>`m
 
 " making tab visible
-set listchars=tab:·\ ,
+set listchars=tab:·\ ,trail:~,
 set list
 
 " Call plug#begin()
@@ -81,6 +82,7 @@ set list
 " set notermguicolors
 " colorscheme elflord
 colorscheme xoria256
+" colorscheme gruvbox
 
 " setting the 'makeprg' variable
 if empty(glob("./Makefile"))
@@ -115,3 +117,14 @@ call matchadd('ColorColumn', '\%81v', 100)
 " wrap text on specific column
 " set textwidth=80
 " set wrapmargin=2
+
+" vim clang format integration
+function! Formatonsave()
+  let l:lines="all"
+"  let l:formatdiff = 1
+  py3f /usr/share/clang/clang-format.py
+endfunction
+autocmd BufWritePre *.h,*.cc,*.c,*.cpp call Formatonsave()
+
+map <C-I> :py3f /usr/share/clang/clang-format.py<cr>
+imap <C-I> <c-o>:py3f /usr/share/clang/clang-format.py<cr>

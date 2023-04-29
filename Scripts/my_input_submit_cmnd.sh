@@ -32,6 +32,9 @@ if [ "$1" != "" ] && [ "$2" == "" ]; then
 	elif [ -f $1.cpp ]; then
 		xclip -selection clipboard < $1.cpp
 		exit 0
+    elif [ -f $1.py ]; then
+		xclip -selection clipboard < $1.py
+        exit 0
 	elif [ -f $1.java ]; then
 		xclip -selection clipboard < $1.java
 		exit 0

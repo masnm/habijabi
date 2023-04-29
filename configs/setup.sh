@@ -108,4 +108,6 @@ read -p "Want to setup urxvt config? [Y/N] " response
 if [[ $response == [Yy] ]]; then
 	echo 'Setting up urxvt configure'
 	ln -s $(pwd)/.Xdefaults ~/.Xdefaults
+	sudo mkdir -p /usr/lib/urxvt/perl/urxvt_perl
+	sudo cp ./urxvt_perl/* /usr/lib/urxvt/perl/urxvt_perl/
 fi

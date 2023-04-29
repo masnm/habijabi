@@ -24,9 +24,9 @@ if [[ "$1" == *.c ]]; then
 
 elif [[ "$1" == *.cpp ]]; then
 	if [ "$2" == "-f" ]; then
-		g++ -std=c++17 -Wshadow -Wall -Wextra -pedantic -o ${filename::-4}.out $1 -O2 -Wno-unused-result
+		g++ -std=c++20 -Wshadow -Wall -Wextra -pedantic -o ${filename::-4}.out $1 -O2 -Wno-unused-result
 	elif [ "$2" == "" ]; then
-		g++ -std=c++17 -Wshadow -Wall -Wextra -pedantic -o ${filename::-4}.out $1 -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -DLOCAL
+		g++ -std=c++20 -Wshadow -Wall -Wextra -pedantic -o ${filename::-4}.out $1 -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -DLOCAL
 	else
 		echo -e '\e[0;31m#___Undefined flag' ' $2 ' '___#\e[m'
 		exit 1
@@ -36,6 +36,9 @@ elif [[ "$1" == *.cpp ]]; then
 		time ./${filename::-4}.out
 		rm ${filename::-4}.out
 	fi
+
+elif [[ "$1" == *.py ]]; then
+    time python3 $filename
 
 elif [[ "$1" == *.java ]]; then
 	# TODO: need to work on multiple java files

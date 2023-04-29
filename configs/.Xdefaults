@@ -1,22 +1,5 @@
+!1- !!Source http://github.com/altercation/solarized
 ! ! Dracula Xresources palette
-! *.foreground: #F8F8F2
-! *.background: #282A36
-! *.color0:     #000000
-! *.color8:     #4D4D4D
-! *.color1:     #FF5555
-! *.color9:     #FF6E67
-! *.color2:     #50FA7B
-! *.color10:    #5AF78E
-! *.color3:     #F1FA8C
-! *.color11:    #F4F99D
-! *.color4:     #BD93F9
-! *.color12:    #CAA9FA
-! *.color5:     #FF79C6
-! *.color13:    #FF92D0
-! *.color6:     #8BE9FD
-! *.color14:    #9AEDFE
-! *.color7:     #BFBFBF
-! *.color15:    #E6E6E6
 
 ! ! Normal      Bright          VIM                  Bash Prompt
 ! ! --------    -------       -------               --------------
@@ -29,26 +12,6 @@
 ! ! 6 Cyan      14 Cyan       6 Function Name       14
 ! ! 7 White     15 White      7                     15 
 
-! URxvt*background: #ffffff
-! URxvt*foreground: #000000
-! 
-! URxvt*color0: #000000
-! URxvt*color8: #000000
-! URxvt*color1: #941cdc
-! URxvt*color9: #349334
-! URxvt*color2: #264653
-! URxvt*color10: #264653
-! URxvt*color3: #7f7f7f
-! URxvt*color11: #7f7f7f
-! URxvt*color4: #2a9d8f
-! URxvt*color12: #2a9d8f
-! URxvt*color5: #048c8c
-! URxvt*color13: #048c8c
-! URxvt*color6: #b83434
-! URxvt*color14: #b83434
-! URxvt*color7: #1b1bfc
-! URxvt*color15: #1b1bfc
-
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
 ! Description: Retro groove colorscheme generalized
@@ -59,6 +22,8 @@
 
 ! hard contrast: *background: #1d2021
 ! URxvt*background: #242424
+! URxvt*depth: 32
+! URxvt*background: [85]#1c1c1c
 URxvt*background: #1c1c1c
 ! soft contrast: *background: #32302f
 URxvt*foreground: #eeeeee
@@ -88,7 +53,6 @@ URxvt*foreground: #eeeeee
 *color7:  #a89984
 *color15: #ebdbb2
 
-!1- !!Source http://github.com/altercation/solarized
 
 ! Stop Ctrl-Shift form entering ISO 14755 mode
 URxvt.iso14755: false
