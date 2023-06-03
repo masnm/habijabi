@@ -38,3 +38,8 @@ for_window [class="^.*"] border pixel 1
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="gnome-calculator" instance="gnome-calculator"] floating enable
 for_window [class="blueman-manager" instance="blueman-manager"] floating enable
+
+# swapping Escape with Caps_Lock
+exec --no-startup-id xmodmap -e 'keycode 66 = Escape'
+exec --no-startup-id xmodmap -e 'keycode 9 = Caps_Lock'
+exec --no-startup-id xmodmap -e 'clear lock'
