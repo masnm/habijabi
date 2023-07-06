@@ -59,10 +59,22 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 !setting up font
-URxvt.font: xft:Source Code Pro:size=10
-! URxvt.font:       xft:iosevka:size=10
-! URxvt.font:        xft:monospace:size=10
+! URxvt.font: xft:SourceCodePro:size=10
+! URxvt.font: xft:iosevka:size=10
+! URxvt.font: xft:monospace:size=10
+URxvt.font: xft:UbuntuMono:size=10
 ! URxvt*font: xft:ubuntu mono derivative powerline:pixelsize=16:antialias=true:hinting=true
+
+!URxvt.font: \
+!            xft:UbuntuMono:style=Regular:antialias=true:size=16:minspace=False, \
+!            xft:Monospace:style=Medium:antialias=true:minspace=False, \
+!            xft:Comic Mono:style=Normal:antialias=true:size=16:minspace=False, \
+!            xft:SauceCodePro Nerd Font:style=Regular:antialias=true:size=16:minspace=False, \
+!            xft:DejaVuSansMono Nerd Font:antialias=true:size=16:minspace=False, \
+!            xft:DroidSansMono Nerd Font Mono:antialias=true:size=16, \
+!            xft:FuraMono NF:size=16:antialias=true:minspace=False, \
+!            xft:RobotoMono Nerd Font:antialias=true:size=16:minspace=False, \
+!            xft:Noto Sans Mono:antialias=true:size=16:minspace=False
 
 URxvt.scrollBar:  false
 ! urxvt.letterSpace: -5
