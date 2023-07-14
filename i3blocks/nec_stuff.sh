@@ -6,7 +6,8 @@ sudo dnf install \
 acpi \
 python3 \
 sysstat \
-speedtest-cli
+yad \
+xdotool
 
 # update the speedtest extention
 # update the cpu usage mpstat stuff

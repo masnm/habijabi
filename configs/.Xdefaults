@@ -59,10 +59,12 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 !setting up font
-! URxvt.font: xft:SourceCodePro:size=10
+! URxvt.font: xft:xos4 SourceCodePro-Regular:pixelsize=24:antialias=true:autohint=true,xft:unifont
+URxvt.font: xft:SourceCodePro-Regular:size=10
+! Urxvt.font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso8859-1
 ! URxvt.font: xft:iosevka:size=10
 ! URxvt.font: xft:monospace:size=10
-URxvt.font: xft:UbuntuMono:size=10
+! URxvt.font: xft:UbuntuMono:size=10
 ! URxvt*font: xft:ubuntu mono derivative powerline:pixelsize=16:antialias=true:hinting=true
 
 !URxvt.font: \
