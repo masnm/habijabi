@@ -2,7 +2,7 @@
 
 ### Before Anything
 ```console
-sudo dnf update --refresh
+sudo apt update && sudo apt upgrade
 ```
 login to firefox account & configure add ons
 ```console
