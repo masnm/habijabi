@@ -37,6 +37,12 @@ zsh ./packages.sh
 rm packages.sh
 ```
 
+### configure the themes & icons
+set the icons theme and widget theme using
+```console
+lxappearance
+```
+
 ### Now clone this repository in codes folder
 ```console
 cd $HOME
