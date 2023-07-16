@@ -37,6 +37,14 @@ zsh ./packages.sh
 rm packages.sh
 ```
 
+### Now clone this repository in codes folder
+```console
+cd $HOME
+mkdir codes
+cd codes
+git clone # repository ssh link
+```
+
 
 ### Restoring ssh and gpg key
 
