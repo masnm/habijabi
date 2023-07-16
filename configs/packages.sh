@@ -17,7 +17,7 @@ gdb \
 git \
 gvfs-mtp \
 i3blocks \
-lightdm-gtk-greeter \
+lightdm-gtk-greeter-settings \
 lxappearance \
 maim \
 make \
@@ -36,7 +36,7 @@ vim \
 vlc \
 xclip \
 xdg-user-dirs \
-xfce4-power-manager-settings \
+xfce4-power-manager \
 xreader \
 zsh \
 zsh-autosuggestions \
