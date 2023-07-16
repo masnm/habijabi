@@ -1,5 +1,18 @@
 # habijabi
 
+### Before Anything
+```console
+sudo dnf update --refresh
+```
+login to firefox account & configure add ons
+```console
+reboot
+```
+
+### Restoring SSH & GPG restore
+Download the SSH and ZPZ folder from google drive
+
+
 ### Restoring ssh and gpg key
 
 ##### Backup: Change {drive name}
