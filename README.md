@@ -52,6 +52,20 @@ cd codes
 git clone git@github.com:masnm/habijabi.git
 ```
 
+### Setup the configurations
+```console
+cd #HOME
+cd codes/habijabi/configs
+./setup.sh
+```
+
+### Removing the unnacessary stuffs
+```console
+cd #HOME
+cd codes/habijabi/configs
+./cleanup.sh
+```
+
 
 ### Restoring ssh and gpg key
 
