@@ -42,7 +42,7 @@ rm packages.sh
 cd $HOME
 mkdir codes
 cd codes
-git clone # repository ssh link
+git clone git@github.com:masnm/habijabi.git
 ```
 
 
