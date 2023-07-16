@@ -2,68 +2,22 @@
 
 sudo dnf update --refresh
 
-sudo dnf install zsh \
-zsh-autosuggestions \
-zsh-syntax-highlighting \
+sudo dnf install \
 autojump-zsh \
-vim \
-git \
-git \
-xclip \
-xfce4-power-manager-settings \
-rxvt-unicode \
-materia-gtk-theme \
-papirus-icon-theme \
-lxappearance \
-git \
-zsh \
-zsh-autosuggestions \
-zsh-syntax-highlighting \
-vim \
-xclip \
-i3blocks \
-thunar \
-thunar-volman \
-xreader \
-gcc \
-g++ \
-clang \
-clang-tools-extra \
-gvfs-mtp \
 blueman \
 bluez \
 bluez-tools \
-xreader \
-transmission \
-vlc \
+bluez-utils \
+clang \
+clang-tools-extra \
+ctags \
 feh \
 g++ \
 gcc \
 gdb \
 git \
-lxappearance \
-maim \
-make \
-materia-gtk-theme \
-mousepad \
-papirus-icon-theme \
-pavucontrol \
-thunar \
-tmux \
-transmission \
-tree \
-ctags \
-unzip \
-vim \
-xclip \
-blueman \
-bluez \
-bluez-utils \
-ctags \
-feh \
-gcc \
-gdb \
-git \
+gvfs-mtp \
+i3blocks \
 lightdm-gtk-greeter-settings \
 lxappearance \
 maim \
@@ -72,15 +26,22 @@ materia-gtk-theme \
 mousepad \
 papirus-icon-theme \
 pavucontrol \
+rxvt-unicode \
 thunar \
 thunar-volman \
 tmux \
+transmission \
 tree \
 unzip \
 vim \
+vlc \
 xclip \
 xdg-user-dirs \
-bluez-tools
+xfce4-power-manager-settings \
+xreader \
+zsh \
+zsh-autosuggestions \
+zsh-syntax-highlighting
 
 
 
