@@ -84,43 +84,43 @@ xdg-user-dirs
 
 
 
-compton
-acpi
-fontawesome-fonts
-sysstat
-xset
-playerctl
-xreader
-transmission
-vlc
-nitrogen
-uget
-bash-completion
-brightnessctl
-gnome-disk-utility
-gvfs
-gvfs-mtp
-libinput
-libnotify
-lsd
-man
-notification-daemon
-noto-fonts-emoji
-playerctl
-thunar
-thunar-volman
-tmux
-tree
-unzip
-vim
-xclip
-xf86-input-libinput
-xorg
-xorg-xinit
-xorg-xmodmap
-xorg-xrdb
-xss-lock
-xterm
+# compton
+# acpi
+# fontawesome-fonts
+# sysstat
+# xset
+# playerctl
+# xreader
+# transmission
+# vlc
+# nitrogen
+# uget
+# bash-completion
+# brightnessctl
+# gnome-disk-utility
+# gvfs
+# gvfs-mtp
+# libinput
+# libnotify
+# lsd
+# man
+# notification-daemon
+# noto-fonts-emoji
+# playerctl
+# thunar
+# thunar-volman
+# tmux
+# tree
+# unzip
+# vim
+# xclip
+# xf86-input-libinput
+# xorg
+# xorg-xinit
+# xorg-xmodmap
+# xorg-xrdb
+# xss-lock
+# xterm
 
 
 
