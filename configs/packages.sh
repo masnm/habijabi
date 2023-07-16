@@ -7,7 +7,6 @@ autojump-zsh \
 blueman \
 bluez \
 bluez-tools \
-bluez-utils \
 clang \
 clang-tools-extra \
 ctags \
