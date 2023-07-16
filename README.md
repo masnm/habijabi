@@ -15,6 +15,14 @@ Unzip the zip file and goto the folder
 ```console
 gpg --import my-private-key.asc
 rm my-private-key.asc
+mv .ssh $HOME/
+cd $HOME
+rm .ssh/known_hosts*
+mv .ssh/id_ed25519.txt .ssh/id_ed25519
+chmod 600 ~/.ssh/id_ed25519
+chmod 644 ~/.ssh/id_ed25519.pub
+eval "$(ssh-agent -s)"
+ssh -T git@github.com # give option `yes`
 ```
 
 
