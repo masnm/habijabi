@@ -9,6 +9,10 @@ login to firefox account & configure add ons
 reboot
 ```
 
+### Install the rpm packages repository
+Instructions can be found in the below webpage
+[This webpage containsa the instructions](https://rpmfusion.org/Configuration)
+
 ### Restoring SSH & GPG restore
 Download the SSH and ZPZ folder from google drive
 Unzip the zip file and goto the folder
