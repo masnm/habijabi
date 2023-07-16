@@ -11,6 +11,11 @@ reboot
 
 ### Restoring SSH & GPG restore
 Download the SSH and ZPZ folder from google drive
+Unzip the zip file and goto the folder
+```console
+gpg --import my-private-key.asc
+rm my-private-key.asc
+```
 
 
 ### Restoring ssh and gpg key
