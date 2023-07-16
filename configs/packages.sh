@@ -79,7 +79,8 @@ tree \
 unzip \
 vim \
 xclip \
-xdg-user-dirs
+xdg-user-dirs \
+bluez-tools
 
 
 
