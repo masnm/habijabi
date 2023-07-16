@@ -28,7 +28,7 @@ ssh -T git@github.com # give option `yes`
 ### installing necessary packages
 ```console
 cd $HOME
-wget https://raw.githubusercontent.com/masnm/habijabi/configure-update/configs/packages.sh
+wget https://raw.githubusercontent.com/masnm/habijabi/master/configs/packages.sh
 zsh ./packages.sh
 rm packages.sh
 ```
