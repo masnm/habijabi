@@ -17,7 +17,7 @@ gdb \
 git \
 gvfs-mtp \
 i3blocks \
-lightdm-gtk-greeter-settings \
+lightdm-gtk-greeter \
 lxappearance \
 maim \
 make \
