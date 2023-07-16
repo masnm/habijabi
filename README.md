@@ -41,6 +41,7 @@ rm packages.sh
 set the icons theme and widget theme using
 ```console
 lxappearance
+reboot # reboot the system
 ```
 
 ### Now clone this repository in codes folder
