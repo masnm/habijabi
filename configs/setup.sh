@@ -1,19 +1,11 @@
 #!/bin/bash
 
-read -p "Want to setup Bash Aliases? [Y/N] " response
+read -p "Want to setup ZSH? [Y/N] " response
 if [[ $response == [Yy] ]]; then
-	echo 'Setting up Bash Aliases'
-	ln -s $(pwd)/.bash_aliases ~/.bash_aliases
-	declare -a StringArray=(
-		""
-		"# Source Bash aliases By masnm"
-		"if [ -f ~/.bash_aliases ]; then"
-		"\t. ~/.bash_aliases"
-		"fi"
-	)
-	for String in "${StringArray[@]}"; do
-		echo -e $String >> $HOME/.bashrc
-	done
+	echo 'Setting up ZSH'
+	ln -s $(pwd)/.zshrc ~/.zshrc
+    touch ~/.histfile
+    chsh /bin/zsh
 fi
 
 read -p "Want to setup Vimrc? [Y/N] " response

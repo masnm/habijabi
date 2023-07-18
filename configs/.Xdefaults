@@ -60,7 +60,7 @@ URxvt.iso14755_52: false
 
 !setting up font
 ! URxvt.font: xft:xos4 SourceCodePro-Regular:pixelsize=24:antialias=true:autohint=true,xft:unifont
-URxvt.font: xft:SourceCodePro-Regular:size=10
+URxvt.font: xft:SourceCodePro-Light:size=10
 ! Urxvt.font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso8859-1
 ! URxvt.font: xft:iosevka:size=10
 ! URxvt.font: xft:monospace:size=10
