@@ -33,6 +33,16 @@ zsh ./packages.sh
 rm packages.sh
 ```
 
+### install xdm download manager from the following webpage
+[XDM Download Manager](https://xtremedownloadmanager.com/)
+unzip the downloaded file with the following command
+```console
+cd
+cd Downloads/
+tar -xf xdm-setup*.tar.xz
+sudo ./install.sh
+```
+
 ### configure the themes & icons
 set the icons theme and widget theme using
 ```console
