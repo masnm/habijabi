@@ -48,14 +48,18 @@ alias la='ls -A --color=auto'
 alias l='ls -F --color=auto'
 
 # cal current date highlight
-# alias cal='ncal -b'
+alias cal='ncal -b'
 
 # my aliases
-alias d="my_gdb_debug_cmnd.sh"
-alias t="my_verdict_cmnd.sh"
-alias is="my_input_submit_cmnd.sh"
-alias v="my_accepted_wrong_ans_cmnd.sh"
-alias c="my_code_compile_cmnd.sh"
-alias r="my_code_runner_cmnd.sh"
-alias tm="my_time_memory_usage_cmnd.sh"
+# alias d="my_gdb_debug_cmnd.sh"
+# alias t="my_verdict_cmnd.sh"
+# alias is="my_input_submit_cmnd.sh"
+# alias v="my_accepted_wrong_ans_cmnd.sh"
+# alias c="my_code_compile_cmnd.sh"
+# alias r="my_code_runner_cmnd.sh"
+# alias tm="my_time_memory_usage_cmnd.sh"
 alias feh="feh -B Black"
+
+# enabling syntax highlighting & auto suggestion
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh

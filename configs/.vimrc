@@ -1,5 +1,6 @@
 " enter the current millenium
 set nocompatible
+set noswapfile
 
 " all 256 bit colors
 " set termguicolors
@@ -57,27 +58,25 @@ let g:netrw_banner=0		"disable annoying banner
 " Enabling syntal highlight in glsl
 " au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 
+" function to call cmake on current directory into Build folder
+function! CmakeBuildGenerate ()
+    !command cmake -B Build -S .
+endfunction
+function! CmakeBuild ()
+    !command cmake --build Build
+endfunction
+nnoremap ,cb :call CmakeBuildGenerate ()<CR>
+nnoremap ,cm :call CmakeBuild ()<CR>
+
 "snipits : if needed cheak net or watch video
 nnoremap ,cc :-1read $HOME/codes/habijabi/Snippets/main.c<CR>7ggo<CR>
 nnoremap ,cpp :-1read $HOME/codes/habijabi/Snippets/main.cpp<CR>45ggzt
 nnoremap ,java :-1read $HOME/codes/habijabi/Snippets/main.java<CR>8ggf{hi
 nnoremap ,html :-1read $HOME/codes/habijabi/Snippets/main.html<CR>6ggwww
 
-" scan test cases
-nnoremap ,ntc mmG9ki//<ESC>`m
-nnoremap ,ytc mmG9kvld<ESC>`m
-
-" print case number
-nnoremap ,ncn mmG7ki//<ESC>`m
-nnoremap ,ycn mmG7kvld<ESC>`m
-
 " making tab visible
 set listchars=tab:·\ ,trail:~,
 set list
-
-" Call plug#begin()
-" 	Plug 'octol/vim-cpp-enhanced-highlight'
-" Call plug#end()
 
 " set notermguicolors
 " colorscheme elflord
@@ -85,7 +84,9 @@ colorscheme xoria256
 " colorscheme gruvbox
 
 " setting the 'makeprg' variable
-if empty(glob("./Makefile"))
+if !empty(glob("./Build/Makefile"))
+	set makeprg=cmake\ --build\ Build
+elseif empty(glob("./Makefile"))
 	set makeprg=my_code_compile_cmnd.sh\ %
 endif
 
@@ -122,9 +123,10 @@ call matchadd('ColorColumn', '\%81v', 100)
 function! Formatonsave()
   let l:lines="all"
 "  let l:formatdiff = 1
-  py3f /usr/share/clang/clang-format.py
+  py3file /usr/share/clang/clang-format-14/clang-format.py
+"  py3f /usr/bin/clang-format
 endfunction
-autocmd BufWritePre *.h,*.cc,*.c,*.cpp call Formatonsave()
+autocmd BufWritePre *.h,*.cc,*.c,*.cpp,*.hpp call Formatonsave()
 
-map <C-I> :py3f /usr/share/clang/clang-format.py<cr>
-imap <C-I> <c-o>:py3f /usr/share/clang/clang-format.py<cr>
+" map <C-I> :py3f /usr/share/clang/clang-format.py<cr>
+" imap <C-I> <c-o>:py3f /usr/share/clang/clang-format.py<cr>

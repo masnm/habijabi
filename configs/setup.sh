@@ -49,6 +49,7 @@ if [[ $response == [Yy] ]]; then
 	git config --global core.editor vim
 	git config --global init.defaultBranch master
 	git config --global diff.tool vimdiff
+    git config --global --add --bool push.autoSetupRemote true
 
 	TOTALKEY=$(gpg --list-secret-keys --keyid-format=long | grep sec)
 	TOTALKEY=${TOTALKEY:14:16}
