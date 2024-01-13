@@ -73,14 +73,19 @@ nnoremap ,cc :-1read $HOME/codes/habijabi/Snippets/main.c<CR>7ggo<CR>
 nnoremap ,cpp :-1read $HOME/codes/habijabi/Snippets/main.cpp<CR>45ggzt
 nnoremap ,java :-1read $HOME/codes/habijabi/Snippets/main.java<CR>8ggf{hi
 nnoremap ,html :-1read $HOME/codes/habijabi/Snippets/main.html<CR>6ggwww
+nnoremap ,dt :r!date<CR>kdd
 
 " making tab visible
 set listchars=tab:·\ ,trail:~,
 set list
 
-" set notermguicolors
+call plug#begin()
+Plug 'morhetz/gruvbox'
+call plug#end()
+
 " colorscheme elflord
 colorscheme xoria256
+" colorscheme xoria256
 " colorscheme gruvbox
 
 " setting the 'makeprg' variable
@@ -94,7 +99,8 @@ endif
 command! Test !my_verdict_cmnd.sh %
 
 " Run command inside vim
-command! Run !my_code_runner_cmnd.sh %
+command! Run !Build/Test3D
+" command! Run !my_code_runner_cmnd.sh %
 
 " Cheak time and memory usage
 command! TM !my_time_memory_usage_cmnd.sh %
@@ -113,7 +119,7 @@ noremap <Right> <Nop>
 
 " enabling maximum columnwidth and enabling error
 highlight ColorColumn ctermbg=red
-call matchadd('ColorColumn', '\%81v', 100)
+call matchadd('ColorColumn', '\%121v', 100)
 
 " wrap text on specific column
 " set textwidth=80
@@ -123,7 +129,7 @@ call matchadd('ColorColumn', '\%81v', 100)
 function! Formatonsave()
   let l:lines="all"
 "  let l:formatdiff = 1
-  py3file /usr/share/clang/clang-format-14/clang-format.py
+  py3file /usr/share/clang/clang-format.py
 "  py3f /usr/bin/clang-format
 endfunction
 autocmd BufWritePre *.h,*.cc,*.c,*.cpp,*.hpp call Formatonsave()

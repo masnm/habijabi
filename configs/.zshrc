@@ -36,10 +36,25 @@ autoload -Uz compinit promptinit
 compinit
 promptinit
 
-prompt off
+# prompt off
 # End of lines added by compinstall
 
+setopt prompt_subst
+
+source "/home/masnm/.zsh/git_info.zsh"
+
+PROMPT=''
+# PROMPT+='%F{yellow}%n@%m ' # Display the username followed by @ and hostname in yellow
+PROMPT+='%F{blue}%1~' # Display the current working directory in blue
+PROMPT+='%F{red}$(__git_info)%f ' # Display the vcs info in red
+PROMPT+='%(?.%F{green}λ .%F{red}λ )' # Display a green prompt if the last command succeeded, or red if it failed
+PROMPT+='%f' # Reset the text color
+
 export GPG_TTY=$(tty)
+
+# export EDITOR=/usr/bin/vim
+export EDITOR=vim
+export TERMINAL=kitty
 
 # some more ls aliases
 alias ls='ls --color=auto'
@@ -61,5 +76,5 @@ alias cal='ncal -b'
 alias feh="feh -B Black"
 
 # enabling syntax highlighting & auto suggestion
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

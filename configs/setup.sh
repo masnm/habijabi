@@ -5,7 +5,7 @@ if [[ $response == [Yy] ]]; then
 	echo 'Setting up ZSH'
 	ln -s $(pwd)/.zshrc ~/.zshrc
     touch ~/.histfile
-    chsh /bin/zsh
+    chsh -s /usr/bin/zsh
 fi
 
 read -p "Want to setup Vimrc? [Y/N] " response
