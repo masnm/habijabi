@@ -47,7 +47,7 @@ PROMPT=''
 # PROMPT+='%F{yellow}%n@%m ' # Display the username followed by @ and hostname in yellow
 PROMPT+='%F{blue}%1~' # Display the current working directory in blue
 PROMPT+='%F{red}$(__git_info)%f ' # Display the vcs info in red
-PROMPT+='%(?.%F{green}λ .%F{red}λ )' # Display a green prompt if the last command succeeded, or red if it failed
+PROMPT+='%(?.%F{green}󰘧 .%F{red}󰘧 )' # Display a green prompt if the last command succeeded, or red if it failed
 PROMPT+='%f' # Reset the text color
 
 export GPG_TTY=$(tty)

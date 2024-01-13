@@ -31,18 +31,14 @@ URxvt*cursorColor: #afbfbf
 *color7:  #a89984
 *color15: #ebdbb2
 
-
 ! Stop Ctrl-Shift form entering ISO 14755 mode
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
-!setting up font
-URxvt.letterSpace: -1
-URxvt.font: xft:IosevkaNerdFontMono:antialias=true:autohint:True:minspace=True:size=10
-
 URxvt.scrollBar:  false
-! urxvt.letterSpace: -5
-! URxvt.lineSpace:  0
+!setting up font
+URxvt.font: xft:IosevkaNerdFontMono:antialias=true:autohint:True:minspace=True:size=12
+urxvt.letterSpace: -1
 
 ! Perl Extensions
 URxvt.perl-lib: /usr/lib/urxvt/perl/urxvt_perl/

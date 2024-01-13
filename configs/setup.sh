@@ -4,6 +4,7 @@ read -p "Want to setup ZSH? [Y/N] " response
 if [[ $response == [Yy] ]]; then
 	echo 'Setting up ZSH'
 	ln -s $(pwd)/.zshrc ~/.zshrc
+    ln -s $(pwd)/.zsh ~/.zsh
     touch ~/.histfile
     chsh -s /usr/bin/zsh
 fi
