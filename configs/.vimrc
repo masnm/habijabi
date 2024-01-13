@@ -1,33 +1,27 @@
 " enter the current millenium
 set nocompatible
+
 set noswapfile
 
 " all 256 bit colors
-" set termguicolors
+set termguicolors
 
 " enable search highliting
 set hlsearch
-
-" enable folding
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
-set foldlevel=1
+set incsearch
 
 " enable line number and indentation
 set number
 set relativenumber
-filetype plugin indent on
-set autoindent expandtab tabstop=4 shiftwidth=4
-" set tabstop=4
-" set shiftwidth=4
 
-" enable syntax and plugin (for netrw)
+" sntax and indent and stuff
 syntax enable
 filetype plugin on
+filetype plugin indent on
+set autoindent expandtab tabstop=4 shiftwidth=4
 
-" enable dictionary
-set dictionary+=/usr/share/dict/american-english
+" enable spell checking
+setlocal spell spelllang=en_us
 
 " search down into subfolders
 " Provides tab-completaion for all file-related tasks
@@ -55,9 +49,6 @@ let g:netrw_banner=0		"disable annoying banner
 "let g:netrw_list_hide.=',\(^\|\s\s)\zs\.\s\+'
 " - cheak |netrw-browse-maps|
 
-" Enabling syntal highlight in glsl
-" au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
-
 " function to call cmake on current directory into Build folder
 function! CmakeBuildGenerate ()
     !command cmake -B Build -S .
@@ -79,14 +70,8 @@ nnoremap ,dt :r!date<CR>kdd
 set listchars=tab:·\ ,trail:~,
 set list
 
-call plug#begin()
-Plug 'morhetz/gruvbox'
-call plug#end()
-
-" colorscheme elflord
+" colorscheme my favourite one
 colorscheme xoria256
-" colorscheme xoria256
-" colorscheme gruvbox
 
 " setting the 'makeprg' variable
 if !empty(glob("./Build/Makefile"))
@@ -119,7 +104,7 @@ noremap <Right> <Nop>
 
 " enabling maximum columnwidth and enabling error
 highlight ColorColumn ctermbg=red
-call matchadd('ColorColumn', '\%121v', 100)
+call matchadd('ColorColumn', '\%81v', 100)
 
 " wrap text on specific column
 " set textwidth=80
