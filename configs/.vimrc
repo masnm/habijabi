@@ -1,11 +1,6 @@
 " enter the current millenium
 set nocompatible
 
-set noswapfile
-
-" all 256 bit colors
-set termguicolors
-
 " enable search highliting
 set hlsearch
 set incsearch
@@ -34,14 +29,16 @@ set wildmenu
 set tags+=/usr/include/tags
 command! MakeTags !ctags -R .
 
-"FILE BROWING
+" FILE BROWING
+let g:netrw_banner    = 0
 let g:netrw_chgwin    = 2
 let g:netrw_preview   = 1
 let g:netrw_liststyle = 3
-let g:netrw_winsize   = 30
+let g:netrw_winsize   = 20
+let g:netrw_list_hide = netrw_gitignore#Hide() .. '.*\.swp$'
 "autocmd VimEnter * 20Lexplore
+
 "Tweaks for browsing
-let g:netrw_banner=0		"disable annoying banner
 "let g:netrw_browee_split=4	"open in prior window
 "let g:netrw_altv=1          "open splits to the right
 "let g:netrw_liststyle=3     "tree view
