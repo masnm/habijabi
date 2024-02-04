@@ -36,3 +36,4 @@ tree \
 mousepad \
 universal-ctags \
 maim \
+brightnessctl \

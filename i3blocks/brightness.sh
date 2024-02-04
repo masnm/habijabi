@@ -1,10 +1,10 @@
 #!/bin/zsh
 
 case $BLOCK_BUTTON in
-  4) xbacklight -inc 5 ;;
-  5) xbacklight -dec 5 ;;
+  4) brightnessctl set +5% > /dev/null;;
+  5) brightnessctl set 5%- > /dev/null;;
 esac
 
-PERCENT=$(xbacklight -get)
+VALUE=$(brightnessctl g)
 
-printf "%s\n" $PERCENT
+printf "%s\n" $VALUE
