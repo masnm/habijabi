@@ -1,8 +1,8 @@
 function __git_symbols() {
 	# Symbols
-	local ahead='↑'
-	local behind='↓'
-	local diverged='↕'
+	local ahead='^'
+	local behind='v'
+	local diverged='='
 	local up_to_date='|'
 	local no_remote=''
 	local staged='+'
