@@ -59,9 +59,9 @@ URxvt.url-select.underline: true
 ! Clipboard options
 URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o -selection clipboard
-URxvt.keysym.M-c:   perl:clipboard:copy
-URxvt.keysym.M-v:   perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.C-C:   perl:clipboard:copy
+URxvt.keysym.C-V:   perl:clipboard:paste
+! URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.clipboard.autocopy: true
 
 URxvt.keysym.C-minus:     resize-font:smaller
