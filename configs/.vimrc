@@ -9,6 +9,13 @@ set incsearch
 set number
 set relativenumber
 
+" smart indenting and tabbing for new lines
+set smartindent
+set smarttab
+
+" show command and insert mode
+set showmode
+
 " sntax and indent and stuff
 syntax enable
 filetype plugin on
@@ -26,8 +33,11 @@ set path+=**
 set wildmenu
 
 " Create the `tags` file
-set tags+=/usr/include/tags
+" set tags+=/usr/include/tags
 command! MakeTags !ctags -R .
+
+" automatically write files when changing when multiple files open
+set autowrite
 
 " FILE BROWING
 let g:netrw_banner    = 0
@@ -45,6 +55,9 @@ let g:netrw_list_hide = netrw_gitignore#Hide() .. '.*\.swp$'
 "let g:netrw_list_hide=netrw_gitignore#Hide()
 "let g:netrw_list_hide.=',\(^\|\s\s)\zs\.\s\+'
 " - cheak |netrw-browse-maps|
+
+" setting the leader key
+let mapleader = ","
 
 " function to call cmake on current directory into Build folder
 function! CmakeBuildGenerate ()
