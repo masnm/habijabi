@@ -38,6 +38,7 @@ URxvt.iso14755_52: false
 URxvt.scrollBar:  false
 !setting up font
 URxvt.font: xft:IosevkaNerdFontMono:antialias=true:autohint:True:minspace=True:size=12
+! URxvt.font: xft:dejavu Sans Mono:antialias=true:autohint:True:minspace=True:size=12
 urxvt.letterSpace: -1
 
 ! Perl Extensions

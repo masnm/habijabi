@@ -1,4 +1,0 @@
-Enable firefox password import enabler
-	about:config
-	signon.management.page.fileImport.enabled
-
