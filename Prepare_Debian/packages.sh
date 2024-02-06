@@ -8,6 +8,7 @@ xorg \
 lightdm \
 lightdm-gtk-greeter \
 lxappearance \
+ranger \
 thunar \
 thunar-volman \
 firefox-esr \
@@ -37,3 +38,4 @@ mousepad \
 universal-ctags \
 maim \
 brightnessctl \
+transmission-gtk \
